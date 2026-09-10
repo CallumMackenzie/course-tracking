@@ -1,0 +1,17 @@
+node_modules/
+dist/
+dist-server/
+coverage/
+.vite/
+
+course-tracking.db
+course-tracking.db-shm
+course-tracking.db-wal
+
+.env
+.env.*
+!.env.example
+*.log
+*.tsbuildinfo
+
+.DS_Store

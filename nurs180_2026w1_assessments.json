@@ -1,0 +1,86 @@
+[
+  {
+    "type": "participation",
+    "name": "Attendance and Participation",
+    "sort_date": "2026-12-01",
+    "course_code": "NURS 180",
+    "worth_pct": 18
+  },
+  {
+    "type": "assignment",
+    "name": "Initial Reflection Mini Paper",
+    "start_date": null,
+    "due_date": "2026-09-17",
+    "course_code": "NURS 180",
+    "worth_pct": 3
+  },
+  {
+    "type": "assignment",
+    "name": "Academic Integrity Modules",
+    "start_date": "2026-09-15",
+    "due_date": "2026-09-20",
+    "course_code": "NURS 180",
+    "worth_pct": 2
+  },
+  {
+    "type": "assignment",
+    "name": "Self-Care Assessment and Plan",
+    "start_date": "2026-09-22",
+    "due_date": "2026-09-27",
+    "course_code": "NURS 180",
+    "worth_pct": 8
+  },
+  {
+    "type": "assignment",
+    "name": "Other Weekly Engagement Activities (2)",
+    "start_date": null,
+    "due_date": null,
+    "sort_date": "2026-11-05",
+    "course_code": "NURS 180",
+    "worth_pct": 12
+  },
+  {
+    "type": "assignment",
+    "name": "Discussion Board: The Physiology of Stress",
+    "start_date": "2026-09-29",
+    "due_date": "2026-10-03",
+    "course_code": "NURS 180",
+    "worth_pct": 5
+  },
+  {
+    "type": "assignment",
+    "name": "Other Discussion Posts and Responses (2)",
+    "start_date": null,
+    "due_date": null,
+    "sort_date": "2026-11-19",
+    "course_code": "NURS 180",
+    "worth_pct": 12
+  },
+  {
+    "type": "assignment",
+    "name": "Final Course Reflection",
+    "start_date": null,
+    "due_date": null,
+    "sort_date": "2026-12-01",
+    "course_code": "NURS 180",
+    "worth_pct": 5
+  },
+  {
+    "type": "assignment",
+    "name": "Self-Care Strategy Paper",
+    "start_date": null,
+    "due_date": null,
+    "sort_date": "2026-11-08",
+    "course_code": "NURS 180",
+    "worth_pct": 20
+  },
+  {
+    "type": "assignment",
+    "name": "Self-Care Creative Project",
+    "start_date": null,
+    "due_date": null,
+    "sort_date": "2026-11-26",
+    "course_code": "NURS 180",
+    "worth_pct": 15
+  }
+]
