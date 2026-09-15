@@ -1,0 +1,271 @@
+[
+  {
+    "course_code": "STAT 406",
+    "date": "2026-09-08",
+    "title": "No class (Imagine UBC)",
+    "readings": [],
+    "links": []
+  },
+  {
+    "course_code": "STAT 406",
+    "date": "2026-09-10",
+    "title": "Class Overview; Probability and SVD Review",
+    "readings": [],
+    "links": [
+      "https://ubc-stat.github.io/stat-406/schedule/slides/00-intro2026w1.html",
+      "https://ubc-stat.github.io/stat-406/schedule/lectures/lecture_01_probability.html"
+    ]
+  },
+  {
+    "course_code": "STAT 406",
+    "date": "2026-09-15",
+    "title": "Introduction to Learning, Regression",
+    "readings": [
+      "ISLR 2.1",
+      "(ESL 2.4, 2.6)"
+    ],
+    "links": [
+      "https://ubc-stat.github.io/stat-406/schedule/lectures/lecture_02_learning_procedure_regression.html"
+    ]
+  },
+  {
+    "course_code": "STAT 406",
+    "date": "2026-09-17",
+    "title": "Learning (cont.), Classification",
+    "readings": [
+      "ISLR 4.3",
+      "(ESL 4.4)"
+    ],
+    "links": [
+      "https://ubc-stat.github.io/stat-406/schedule/lectures/lecture_03_learning_procedure_classification.html"
+    ]
+  },
+  {
+    "course_code": "STAT 406",
+    "date": "2026-09-22",
+    "title": "Model Selection, Cross Validation",
+    "readings": [
+      "ISLR 5.1",
+      "(ESL 2.9, 7.10)"
+    ],
+    "links": [
+      "https://ubc-stat.github.io/stat-406/schedule/lectures/lecture_04_model_selection.html"
+    ]
+  },
+  {
+    "course_code": "STAT 406",
+    "date": "2026-09-24",
+    "title": "Bias-Variance Tradeoff",
+    "readings": [
+      "ISLR 2.2",
+      "(ESL 7.1-7.3)"
+    ],
+    "links": [
+      "https://ubc-stat.github.io/stat-406/schedule/lectures/lecture_05_bias_variance_tradeoff.html"
+    ]
+  },
+  {
+    "course_code": "STAT 406",
+    "date": "2026-09-29",
+    "title": "Ridge Regression",
+    "readings": [
+      "ISLR 6.2.1",
+      "(ESL 3.4.0-3.4.1)"
+    ],
+    "links": [
+      "https://ubc-stat.github.io/stat-406/schedule/lectures/lecture_06_ridge_regression.html"
+    ]
+  },
+  {
+    "course_code": "STAT 406",
+    "date": "2026-10-01",
+    "title": "Lasso Regression",
+    "readings": [
+      "ISLR 6.2.2-6.2.3",
+      "(ESL 3.4.2-3.4.3)"
+    ],
+    "links": [
+      "https://ubc-stat.github.io/stat-406/schedule/lectures/lecture_07_lasso.html"
+    ]
+  },
+  {
+    "course_code": "STAT 406",
+    "date": "2026-10-06",
+    "title": "Basis Functions",
+    "readings": [
+      "ISLR 7.1, 7.4",
+      "(ESL 5.1-5.3)"
+    ],
+    "links": [
+      "https://ubc-stat.github.io/stat-406/schedule/lectures/lecture_08_basis_expansions.html"
+    ]
+  },
+  {
+    "course_code": "STAT 406",
+    "date": "2026-10-08",
+    "title": "Model Selection for Linear Methods",
+    "readings": [
+      "(ESL 7.6-7.7)"
+    ],
+    "links": [
+      "https://ubc-stat.github.io/stat-406/schedule/lectures/lecture_09_information_criteria.html"
+    ]
+  },
+  {
+    "course_code": "STAT 406",
+    "date": "2026-10-13",
+    "title": "Kernel Machines",
+    "readings": [
+      "ISLR 3.5",
+      "(ESL 2.3.2, 5.4.1)"
+    ],
+    "links": [
+      "https://ubc-stat.github.io/stat-406/schedule/lectures/lecture_10_kernels.html"
+    ]
+  },
+  {
+    "course_code": "STAT 406",
+    "date": "2026-10-15",
+    "title": "kNN, Curse of Dimensionality",
+    "readings": [
+      "ISLR 3.5, 8.1",
+      "(ESL 2.3.2, 5.4.1, 9.2)"
+    ],
+    "links": [
+      "https://ubc-stat.github.io/stat-406/schedule/lectures/lecture_11_curse_of_dimensionality.html"
+    ]
+  },
+  {
+    "course_code": "STAT 406",
+    "date": "2026-10-20",
+    "title": "Catch-up if needed",
+    "readings": [],
+    "links": []
+  },
+  {
+    "course_code": "STAT 406",
+    "date": "2026-10-22",
+    "title": "Trees (catch up from last module)",
+    "readings": [
+      "ISLR 8.1, 4.2.0",
+      "(ESL 9.2)"
+    ],
+    "links": [
+      "https://ubc-stat.github.io/stat-406/schedule/lectures/lecture_12_trees.html"
+    ]
+  },
+  {
+    "course_code": "STAT 406",
+    "date": "2026-10-29",
+    "title": "Dimensionality Reduction, Intro to Unsupervised Learning",
+    "readings": [
+      "ISLR 12.2",
+      "(ESL 14.5.1, 14.5.4)"
+    ],
+    "links": [
+      "https://ubc-stat.github.io/stat-406/schedule/lectures/lecture_13_pca.html"
+    ]
+  },
+  {
+    "course_code": "STAT 406",
+    "date": "2026-11-03",
+    "title": "Clustering",
+    "readings": [
+      "ISLR 12.4.1",
+      "(ESL 14.3)"
+    ],
+    "links": [
+      "https://ubc-stat.github.io/stat-406/schedule/lectures/lecture_14_clustering.html"
+    ]
+  },
+  {
+    "course_code": "STAT 406",
+    "date": "2026-11-05",
+    "title": "The Bootstrap",
+    "readings": [
+      "ISLR 5.2",
+      "(ESL 7.11, 8.2)"
+    ],
+    "links": [
+      "https://ubc-stat.github.io/stat-406/schedule/lectures/lecture_15_bootstrap.html"
+    ]
+  },
+  {
+    "course_code": "STAT 406",
+    "date": "2026-11-10",
+    "title": "No class (Midterm Break)",
+    "readings": [],
+    "links": []
+  },
+  {
+    "course_code": "STAT 406",
+    "date": "2026-11-12",
+    "title": "Catch up if needed",
+    "readings": [],
+    "links": []
+  },
+  {
+    "course_code": "STAT 406",
+    "date": "2026-11-17",
+    "title": "Bagging, Random Forests",
+    "readings": [
+      "ISLR 8.2.0-8.2.2",
+      "(ESL 8.7, 15.1-15.3)"
+    ],
+    "links": [
+      "https://ubc-stat.github.io/stat-406/schedule/lectures/lecture_16_bagging_and_random_forests.html"
+    ]
+  },
+  {
+    "course_code": "STAT 406",
+    "date": "2026-11-19",
+    "title": "Boosting",
+    "readings": [
+      "ISLR 8.2.3",
+      "(ESL 10.1-10.5, 10.9)"
+    ],
+    "links": [
+      "https://ubc-stat.github.io/stat-406/schedule/lectures/lecture_17_boosting.html"
+    ]
+  },
+  {
+    "course_code": "STAT 406",
+    "date": "2026-11-24",
+    "title": "Introduction to Neural Networks",
+    "readings": [
+      "ISLR 10.1-10.2",
+      "(ESL 11.1, 11.3)"
+    ],
+    "links": [
+      "https://ubc-stat.github.io/stat-406/schedule/lectures/lecture_18_neural_networks.html"
+    ]
+  },
+  {
+    "course_code": "STAT 406",
+    "date": "2026-11-26",
+    "title": "Neural Network Optimization",
+    "readings": [
+      "ISLR 10.7-10.8",
+      "(ESL 11.4)"
+    ],
+    "links": [
+      "https://ubc-stat.github.io/stat-406/schedule/lectures/lecture_19_gradient_descent_backpropagation.html"
+    ]
+  },
+  {
+    "course_code": "STAT 406",
+    "date": "2026-12-01",
+    "title": "Generalization",
+    "readings": [],
+    "links": [
+      "https://ubc-stat.github.io/stat-406/schedule/lectures/lecture_20_neural_network_generalization.html"
+    ]
+  },
+  {
+    "course_code": "STAT 406",
+    "date": "2026-12-02",
+    "title": "Catch-up if needed & Review",
+    "readings": [],
+    "links": []
+  }
+]

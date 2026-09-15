@@ -1,0 +1,275 @@
+[
+  {
+    "course_code": "CPSC 340",
+    "date": "2026-09-09",
+    "title": "Motivation and Syllabus",
+    "readings": [],
+    "links": ["https://www.students.cs.ubc.ca/~cs-340/slides/L1.pdf", "https://www.youtube.com/watch?v=OokV2AX4TKg", "https://en.wikipedia.org/wiki/Machine_learning", "http://www.economist.com/news/briefing/21650526-artificial-intelligence-scares-peopleexcessively-so-rise-machines", "https://www.thetalkingmachines.com/episodes/hello-world", "https://mml-book.github.io/"]
+  },
+  {
+    "course_code": "CPSC 340",
+    "date": "2026-09-11",
+    "title": "Exploratory Data Analysis",
+    "readings": [],
+    "links": ["https://www.students.cs.ubc.ca/~cs-340/slides/L2.pdf", "http://datagenetics.com/blog/april32016/index.html", "https://mathwithbaddrawings.com/2016/07/13/why-not-to-trust-statistics/", "http://guides.library.duke.edu/datavis/vis_types", "https://developers.google.com/chart/interactive/docs/gallery?hl=en", "http://selection.datavisualization.ch/"]
+  },
+  {
+    "course_code": "CPSC 340",
+    "date": "2026-09-14",
+    "title": "Decision Trees",
+    "readings": ["AI:AMA 19.2-3", "ESL 9.2", "ML:APP 16.2"],
+    "links": ["https://www.students.cs.ubc.ca/~cs-340/slides/L3.pdf", "http://www.r2d3.us/visual-intro-to-machine-learning-part-1", "https://en.wikipedia.org/wiki/Decision_tree_learning", "https://en.wikipedia.org/wiki/Entropy_(information_theory)", "https://www.youtube.com/watch?v=Q_1M2JaijjQ", "https://www.cs.ubc.ca/~schmidtm/Courses/Notes/bigO.pdf"]
+  },
+  {
+    "course_code": "CPSC 340",
+    "date": "2026-09-16",
+    "title": "Fundamentals of Learning",
+    "readings": ["AI:AMA 19.4-5", "ESL 7.1-7.4, 7.10", "ML:APP 1.4, 6.5"],
+    "links": ["https://www.students.cs.ubc.ca/~cs-340/slides/L4.pdf", "https://www.youtube.com/watch?v=nKW8Ndu7Mjw", "https://en.wikipedia.org/wiki/Independent_and_identically_distributed_random_variables", "https://en.wikipedia.org/wiki/Cross-validation_(statistics)", "https://en.wikipedia.org/wiki/Bias%E2%80%93variance_tradeoff", "https://en.wikipedia.org/wiki/No_free_lunch_theorem", "https://www.cs.ubc.ca/~schmidtm/Courses/Notes/notation.pdf"]
+  },
+  {
+    "course_code": "CPSC 340",
+    "date": "2026-09-18",
+    "title": "Probabilistic Classifiers",
+    "readings": ["AI:AMA 12.6", "ESL 4.3", "ML:APP 2.2, 3.5, 4.1-4.2"],
+    "links": ["https://www.students.cs.ubc.ca/~cs-340/slides/L5.pdf", "https://en.wikipedia.org/wiki/Conditional_probability", "http://setosa.io/ev/conditional-probability/", "https://en.wikipedia.org/wiki/Naive_Bayes_classifier", "http://datagenetics.com/blog/december32011/index.html", "https://www.cs.ubc.ca/~schmidtm/Courses/Notes/probability.pdf", "https://www.cs.ubc.ca/~schmidtm/Courses/Notes/probabilitySlides.pdf"]
+  },
+  {
+    "course_code": "CPSC 340",
+    "date": "2026-09-21",
+    "title": "Non-Parametric Models",
+    "readings": ["AI:AMA 19.7", "ESL 13.3", "ML:APP 1.4"],
+    "links": ["https://www.students.cs.ubc.ca/~cs-340/slides/L6.pdf", "https://en.wikipedia.org/wiki/K-nearest_neighbors_algorithm", "http://www.datagenetics.com/blog/january12012/index.html", "https://en.wikipedia.org/wiki/Norm_(mathematics)"]
+  },
+  {
+    "course_code": "CPSC 340",
+    "date": "2026-09-23",
+    "title": "Ensemble Methods",
+    "readings": ["AI:AMA 19.8", "ESL 7.11, 8.2, 15, 16.3", "ML:APP 6.2.1, 16.2.5, 16.6"],
+    "links": ["https://www.students.cs.ubc.ca/~cs-340/slides/L7.pdf", "https://en.wikipedia.org/wiki/Ensemble_learning", "https://en.wikipedia.org/wiki/Random_forest", "http://jmlr.org/papers/volume15/delgado14a/delgado14a.pdf", "https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/BodyPartRecognition.pdf"]
+  },
+  {
+    "course_code": "CPSC 340",
+    "date": "2026-09-25",
+    "title": "Clustering",
+    "readings": ["IDM 8.1-8.2", "ESL 14.3"],
+    "links": ["https://www.students.cs.ubc.ca/~cs-340/slides/L8.pdf", "https://en.wikipedia.org/wiki/Cluster_analysis", "https://en.wikipedia.org/wiki/K-means_clustering", "https://www.naftaliharris.com/blog/visualizing-k-means-clustering/", "http://ilpubs.stanford.edu:8090/778/1/2006-13.pdf", "https://www.youtube.com/watch?v=BIQDlmZDuf8"]
+  },
+  {
+    "course_code": "CPSC 340",
+    "date": "2026-09-28",
+    "title": "More Clustering",
+    "readings": ["IDM 8.4"],
+    "links": ["https://www.students.cs.ubc.ca/~cs-340/slides/L9.pdf", "https://en.wikipedia.org/wiki/DBSCAN", "https://www.cs.ubc.ca/~schmidtm/Courses/Notes/dbscan.mov", "https://www.naftaliharris.com/blog/visualizing-dbscan-clustering/", "https://en.wikipedia.org/wiki/Hierarchical_clustering", "https://en.wikipedia.org/wiki/Phylogenetic_tree"]
+  },
+  {
+    "course_code": "CPSC 340",
+    "date": "2026-09-30",
+    "title": "No Class: National Day for Truth and Reconciliation",
+    "readings": [],
+    "links": []
+  },
+  {
+    "course_code": "CPSC 340",
+    "date": "2026-10-02",
+    "title": "Outlier Detection",
+    "readings": ["IDM 8.3", "ESL 14.3.12", "ML:APP 25.5"],
+    "links": ["https://www.students.cs.ubc.ca/~cs-340/slides/L10.pdf", "https://journals.plos.org/plosone/article?id=10.1371%2Fjournal.pone.0152173"]
+  },
+  {
+    "course_code": "CPSC 340",
+    "date": "2026-10-05",
+    "title": "Least Squares",
+    "readings": ["ESL 3.1-2", "ML:APP 7.1-3", "AI:AMA 19.6"],
+    "links": ["https://www.students.cs.ubc.ca/~cs-340/slides/L11.pdf", "http://datagenetics.com/blog/august12013/index.html", "http://setosa.io/ev/ordinary-least-squares-regression/", "https://www.cs.ubc.ca/~schmidtm/Courses/Notes/linear.mp4", "https://www.cs.ubc.ca/~schmidtm/Courses/Notes/linear2.mp4", "https://en.wikipedia.org/wiki/Ordinary_least_squares", "https://www.youtube.com/playlist?list=PLZHQObOWTQDMsr9K-rj53DwVRMYO3t5Yr", "https://en.wikipedia.org/wiki/Partial_derivative", "https://en.wikipedia.org/wiki/Gradient"]
+  },
+  {
+    "course_code": "CPSC 340",
+    "date": "2026-10-07",
+    "title": "Nonlinear Regression",
+    "readings": ["ESL 5.1, 6.3"],
+    "links": ["https://www.students.cs.ubc.ca/~cs-340/slides/L12.pdf", "https://www.quora.com/Why-should-one-learn-machine-learning-from-scratch-rather-than-just-learning-to-use-the-available-libraries", "https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab", "https://atmos.washington.edu/~dennis/MatrixCalculus.pdf", "http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.726.8764&rep=rep1&type=pdf", "https://www.youtube.com/watch?v=kGB7Wd9CudA", "https://www.cs.ubc.ca/~schmidtm/Documents/2009_Notes_LinearAlgebra.pdf", "https://www.cs.ubc.ca/~schmidtm/Courses/Notes/linearQuadraticGradients.pdf"]
+  },
+  {
+    "course_code": "CPSC 340",
+    "date": "2026-10-09",
+    "title": "Gradient Descent",
+    "readings": [],
+    "links": ["https://www.students.cs.ubc.ca/~cs-340/slides/L13.pdf", "https://en.wikipedia.org/wiki/Gradient_descent", "https://en.wikipedia.org/wiki/Convex_function"]
+  },
+  {
+    "course_code": "CPSC 340",
+    "date": "2026-10-12",
+    "title": "No Class: Thanksgiving",
+    "readings": [],
+    "links": []
+  },
+  {
+    "course_code": "CPSC 340",
+    "date": "2026-10-14",
+    "title": "Robust Regression",
+    "readings": ["ML:APP 7.4"],
+    "links": ["https://www.students.cs.ubc.ca/~cs-340/slides/L14.pdf"]
+  },
+  {
+    "course_code": "CPSC 340",
+    "date": "2026-10-16",
+    "title": "Feature Selection",
+    "readings": ["ESL 3.3, 7.5-7"],
+    "links": ["https://www.students.cs.ubc.ca/~cs-340/slides/L15.pdf", "https://en.wikipedia.org/wiki/Genome-wide_association_study", "https://en.wikipedia.org/wiki/Akaike_information_criterion", "https://en.wikipedia.org/wiki/Bayesian_information_criterion"]
+  },
+  {
+    "course_code": "CPSC 340",
+    "date": "2026-10-19",
+    "title": "Regularization",
+    "readings": ["ESL 3.4", "ML:APP 7.5", "AI:AMA 19.4"],
+    "links": ["https://www.students.cs.ubc.ca/~cs-340/slides/L16.pdf"]
+  },
+  {
+    "course_code": "CPSC 340",
+    "date": "2026-10-21",
+    "title": "More Regularization",
+    "readings": ["ESL 6.7", "ML:APP 13.3-4"],
+    "links": ["https://www.students.cs.ubc.ca/~cs-340/slides/L17.pdf", "https://www.cs.ubc.ca/~schmidtm/Courses/Notes/rbf.mp4", "https://www.cs.ubc.ca/~schmidtm/Courses/Notes/rbf2.mp4"]
+  },
+  {
+    "course_code": "CPSC 340",
+    "date": "2026-10-23",
+    "title": "Linear Classifiers",
+    "readings": ["ESL 4.5", "ML:APP 8.5"],
+    "links": ["https://www.students.cs.ubc.ca/~cs-340/slides/L18.pdf", "https://en.wikipedia.org/wiki/Perceptron"]
+  },
+  {
+    "course_code": "CPSC 340",
+    "date": "2026-10-26",
+    "title": "More Linear Classifiers",
+    "readings": ["ESL 4.4, 12.1-2", "ML:APP 8.1-3, 9.5, 14.5", "AI:AMA 19.6"],
+    "links": ["https://www.students.cs.ubc.ca/~cs-340/slides/L19.pdf", "https://en.wikipedia.org/wiki/Support_vector_machine"]
+  },
+  {
+    "course_code": "CPSC 340",
+    "date": "2026-10-28",
+    "title": "Feature Engineering",
+    "readings": [],
+    "links": ["https://www.students.cs.ubc.ca/~cs-340/slides/L20.pdf", "http://static.googleusercontent.com/media/research.google.com/en//pubs/archive/36955.pdf"]
+  },
+  {
+    "course_code": "CPSC 340",
+    "date": "2026-10-30",
+    "title": "Kernel Trick",
+    "readings": ["ESL 12.3", "ML:APP 14.1-4"],
+    "links": ["https://www.students.cs.ubc.ca/~cs-340/slides/L21.pdf"]
+  },
+  {
+    "course_code": "CPSC 340",
+    "date": "2026-11-02",
+    "title": "Stochastic Gradient",
+    "readings": ["ML:APP 8.5"],
+    "links": ["https://www.students.cs.ubc.ca/~cs-340/slides/L22.pdf", "https://en.wikipedia.org/wiki/Stochastic_gradient_descent", "https://www.cs.ubc.ca/~schmidtm/Documents/2022_DLRL_Optim.pdf"]
+  },
+  {
+    "course_code": "CPSC 340",
+    "date": "2026-11-04",
+    "title": "Boosting, Start of MLE",
+    "readings": ["ML:APP 16.4"],
+    "links": ["https://www.students.cs.ubc.ca/~cs-340/slides/L23.pdf", "https://en.wikipedia.org/wiki/AdaBoost", "https://www.cs.ubc.ca/~schmidtm/Courses/Notes/adaBoost.mp4", "https://xgboost.readthedocs.io/en/latest/tutorials/model.html", "https://www.cs.ubc.ca/~schmidtm/Courses/Notes/regressionBoost.mp4"]
+  },
+  {
+    "course_code": "CPSC 340",
+    "date": "2026-11-06",
+    "title": "MLE and MAP",
+    "readings": ["ML:APP 9.3-4"],
+    "links": ["https://www.students.cs.ubc.ca/~cs-340/slides/L24.pdf", "https://en.wikipedia.org/wiki/Maximum_likelihood_estimation"]
+  },
+  {
+    "course_code": "CPSC 340",
+    "date": "2026-11-09",
+    "title": "No Class: Midterm Break",
+    "readings": [],
+    "links": []
+  },
+  {
+    "course_code": "CPSC 340",
+    "date": "2026-11-11",
+    "title": "No Class: Midterm Break",
+    "readings": [],
+    "links": []
+  },
+  {
+    "course_code": "CPSC 340",
+    "date": "2026-11-13",
+    "title": "PCA",
+    "readings": ["ESL 14.5", "IDM B.1", "ML:APP 12.2"],
+    "links": ["https://www.students.cs.ubc.ca/~cs-340/slides/L25.pdf", "https://en.wikipedia.org/wiki/Principal_component_analysis"]
+  },
+  {
+    "course_code": "CPSC 340",
+    "date": "2026-11-16",
+    "title": "More PCA",
+    "readings": [],
+    "links": ["https://www.students.cs.ubc.ca/~cs-340/slides/L26.pdf", "https://stats.stackexchange.com/questions/2691/making-sense-of-principal-component-analysis-eigenvectors-eigenvalues", "https://en.wikipedia.org/wiki/Singular_value_decomposition", "https://en.wikipedia.org/wiki/Eigenface", "https://www.cs.ubc.ca/~schmidtm/Courses/Notes/max.pdf"]
+  },
+  {
+    "course_code": "CPSC 340",
+    "date": "2026-11-18",
+    "title": "Sparse Matrix Factorization",
+    "readings": ["ESL 14.6", "ML:APP 13.8"],
+    "links": ["https://www.students.cs.ubc.ca/~cs-340/slides/L27.pdf", "https://en.wikipedia.org/wiki/Non-negative_matrix_factorization", "http://www.nature.com/nature/journal/v401/n6755/abs/401788a0.html"]
+  },
+  {
+    "course_code": "CPSC 340",
+    "date": "2026-11-20",
+    "title": "Recommender Systems & MDS",
+    "readings": [],
+    "links": ["https://www.students.cs.ubc.ca/~cs-340/slides/L28.pdf", "https://en.wikipedia.org/wiki/Recommender_system", "https://en.wikipedia.org/wiki/Netflix_Prize"]
+  },
+  {
+    "course_code": "CPSC 340",
+    "date": "2026-11-23",
+    "title": "Neural Networks",
+    "readings": ["ML:APP 16.5", "ESL 11.1-4", "AI:AMA 21.1"],
+    "links": ["https://www.students.cs.ubc.ca/~cs-340/slides/L29.pdf", "https://www.youtube.com/watch?v=bHvf7Tagt18", "https://www.youtube.com/watch?v=aircAruvnKk", "https://jalammar.github.io/visual-interactive-guide-basics-neural-networks"]
+  },
+  {
+    "course_code": "CPSC 340",
+    "date": "2026-11-25",
+    "title": "Deep Learning",
+    "readings": ["ML:APP 28.3", "ESL 11.5", "AI:AMA 21.2, 21.4-5"],
+    "links": ["https://www.students.cs.ubc.ca/~cs-340/slides/L30.pdf", "http://fortune.com/ai-artificial-intelligence-deep-machine-learning/", "https://github.com/ChristosChristofidis/awesome-deep-learning", "https://www.youtube.com/watch?v=Qi1Yry33TQE&feature=youtu.be&t=3m"]
+  },
+  {
+    "course_code": "CPSC 340",
+    "date": "2026-11-27",
+    "title": "Deep Learning",
+    "readings": [],
+    "links": ["https://www.students.cs.ubc.ca/~cs-340/slides/L31.pdf", "https://youtu.be/KuXjwB4LzSA"]
+  },
+  {
+    "course_code": "CPSC 340",
+    "date": "2026-11-30",
+    "title": "Convolutions",
+    "readings": ["ML:APP 28.4", "ESL 11.7", "AI:AMA 21.3"],
+    "links": ["https://www.students.cs.ubc.ca/~cs-340/slides/L32.pdf", "https://en.wikipedia.org/wiki/Convolutional_neural_network"]
+  },
+  {
+    "course_code": "CPSC 340",
+    "date": "2026-12-02",
+    "title": "CNNs",
+    "readings": ["ML:APP 28.4", "ESL 11.7", "AI:AMA 21.3"],
+    "links": ["https://www.students.cs.ubc.ca/~cs-340/slides/L33.pdf", "https://en.wikipedia.org/wiki/Convolutional_neural_network"]
+  },
+  {
+    "course_code": "CPSC 340",
+    "date": "2026-12-04",
+    "title": "More CNNs and Conclusion",
+    "readings": ["ML:APP 28.4", "ESL 11.7", "AI:AMA 21.3"],
+    "links": ["https://www.students.cs.ubc.ca/~cs-340/slides/L34.pdf", "https://en.wikipedia.org/wiki/Convolutional_neural_network"]
+  },
+  {
+    "course_code": "CPSC 340",
+    "date": "2026-12-07",
+    "title": "Guest Lecture",
+    "readings": [],
+    "links": ["https://www.students.cs.ubc.ca/~cs-340/slides/L35.pdf"]
+  }
+]

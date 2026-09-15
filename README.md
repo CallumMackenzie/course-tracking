@@ -27,7 +27,8 @@ Open <http://localhost:3001>.
 ## Project structure
 
 ```text
-data/assessments/  Course assessment source data
+data/assessments/   Course assessment source data
+data/course-content/ Dated course-content source data
 public/            Static web assets
 server/            Express API and SQLite initialization
 src/               React client

@@ -1,0 +1,215 @@
+[
+  {
+    "course_code": "CPSC 425",
+    "date": "2026-09-10",
+    "title": "Introduction: Intro to Computer Vision, course logistics",
+    "readings": [],
+    "links": [
+      "https://www.cs.ubc.ca/~aerion1/425_2026W1/Lecture1.pdf"
+    ]
+  },
+  {
+    "course_code": "CPSC 425",
+    "date": "2026-09-15",
+    "title": "Image Formation: light, reflectance, projection, lenses, human eye",
+    "readings": [
+      "Szeliski 2.2",
+      "Lecture Notes: Image Formation"
+    ],
+    "links": []
+  },
+  {
+    "course_code": "CPSC 425",
+    "date": "2026-09-17",
+    "title": "Image Filtering 1: Image as a function, linear filters, correlation and convolution",
+    "readings": [
+      "Szeliski 3.1-3.2"
+    ],
+    "links": []
+  },
+  {
+    "course_code": "CPSC 425",
+    "date": "2026-09-22",
+    "title": "Image Filtering 2: Gaussian filter, separability, pillbox, Fourier",
+    "readings": [
+      "Szeliski 3.2"
+    ],
+    "links": []
+  },
+  {
+    "course_code": "CPSC 425",
+    "date": "2026-09-24",
+    "title": "Image Filtering 3: Speeding up convolution, high and low-pass, non-linear filters",
+    "readings": [
+      "Szeliski 3.3",
+      "Lecture Notes: Image Filtering"
+    ],
+    "links": []
+  },
+  {
+    "course_code": "CPSC 425",
+    "date": "2026-09-29",
+    "title": "Sampling: Sampling theory, bandlimits, Nyquist, aliasing, demosaicing",
+    "readings": [
+      "Szeliski 2.3",
+      "Lecture Notes: FFT, Sampling"
+    ],
+    "links": []
+  },
+  {
+    "course_code": "CPSC 425",
+    "date": "2026-10-01",
+    "title": "Scaled Representations 1: Template matching, Gaussian and Laplacian pyramids",
+    "readings": [
+      "Szeliski 9.1"
+    ],
+    "links": []
+  },
+  {
+    "course_code": "CPSC 425",
+    "date": "2026-10-06",
+    "title": "Scaled Representations 2: Pyramids, blending, multi-scale matching",
+    "readings": [
+      "Szeliski 3.5"
+    ],
+    "links": []
+  },
+  {
+    "course_code": "CPSC 425",
+    "date": "2026-10-08",
+    "title": "Local Image Features 1: Derivatives, edge detection, image boundaries",
+    "readings": [
+      "Szeliski 7.2"
+    ],
+    "links": []
+  },
+  {
+    "course_code": "CPSC 425",
+    "date": "2026-10-13",
+    "title": "Local Image Features 2: Autocorrelation, corner detection, blobs, scale selection",
+    "readings": [
+      "Szeliski 7.1",
+      "Lecture Notes: Derivatives, Edge Detection, Corners and Blobs"
+    ],
+    "links": []
+  },
+  {
+    "course_code": "CPSC 425",
+    "date": "2026-10-15",
+    "title": "Texture 1: Introduction, non-parametric, texture synthesis",
+    "readings": [
+      "Szeliski 10.5"
+    ],
+    "links": []
+  },
+  {
+    "course_code": "CPSC 425",
+    "date": "2026-10-20",
+    "title": "Texture 2: Analysis, textons, filter banks and Midterm Review: Q&A",
+    "readings": [],
+    "links": []
+  },
+  {
+    "course_code": "CPSC 425",
+    "date": "2026-10-27",
+    "title": "Local Image Features 3: Correspondence, invariance, SIFT, HoG, SURF",
+    "readings": [
+      "Szeliski 7",
+      "Lecture Notes: SIFT"
+    ],
+    "links": []
+  },
+  {
+    "course_code": "CPSC 425",
+    "date": "2026-10-29",
+    "title": "Model Fitting 1: Image alignment, RANSAC, object detection",
+    "readings": [
+      "Szeliski 2.1, 8.1"
+    ],
+    "links": []
+  },
+  {
+    "course_code": "CPSC 425",
+    "date": "2026-11-03",
+    "title": "Model Fitting 2: Hough Transform",
+    "readings": [
+      "Szeliski 7.4"
+    ],
+    "links": []
+  },
+  {
+    "course_code": "CPSC 425",
+    "date": "2026-11-05",
+    "title": "Stereo: Epipolar geometry, rectification, disparity, block matching",
+    "readings": [
+      "Szeliski"
+    ],
+    "links": []
+  },
+  {
+    "course_code": "CPSC 425",
+    "date": "2026-11-10",
+    "title": "Break: No class",
+    "readings": [],
+    "links": []
+  },
+  {
+    "course_code": "CPSC 425",
+    "date": "2026-11-12",
+    "title": "Optical Flow: Brightness constancy, optical flow constraint, aperture, Lucas-Kanade, Horn-Schunck",
+    "readings": [
+      "Szeliski 9.3"
+    ],
+    "links": []
+  },
+  {
+    "course_code": "CPSC 425",
+    "date": "2026-11-17",
+    "title": "Classification 1: Bayes Rule, loss functions, kNN, SVM, bag of words",
+    "readings": [
+      "Szeliski 11.4, 12.3-12.4"
+    ],
+    "links": []
+  },
+  {
+    "course_code": "CPSC 425",
+    "date": "2026-11-19",
+    "title": "Classification 2: Review, Boosting, CIFAR 10, Decision Trees",
+    "readings": [
+      "Szeliski 11.4, 12.3-12.4, 5.1-5.2"
+    ],
+    "links": []
+  },
+  {
+    "course_code": "CPSC 425",
+    "date": "2026-11-24",
+    "title": "Neural Networks: Artificial neurons, biological analogies, neural nets",
+    "readings": [
+      "Szeliski 5.1.3, 5.3-5.4"
+    ],
+    "links": []
+  },
+  {
+    "course_code": "CPSC 425",
+    "date": "2026-11-26",
+    "title": "Convolutional Neural Nets 1: Backpropagation, convolutional layers",
+    "readings": [
+      "Szeliski 5.1.3, 5.3-5.4"
+    ],
+    "links": []
+  },
+  {
+    "course_code": "CPSC 425",
+    "date": "2026-12-01",
+    "title": "Convolutional Neural Nets 2: Pooling layers, detection, segmentation, applications",
+    "readings": [],
+    "links": []
+  },
+  {
+    "course_code": "CPSC 425",
+    "date": "2026-12-03",
+    "title": "TBD: Time allowing and Final Prep: Q&A",
+    "readings": [],
+    "links": []
+  }
+]

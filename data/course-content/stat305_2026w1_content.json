@@ -1,0 +1,254 @@
+[
+  {
+    "course_code": "STAT 305",
+    "date": "2026-09-09",
+    "title": "Introduction",
+    "readings": [],
+    "links": []
+  },
+  {
+    "course_code": "STAT 305",
+    "date": "2026-09-11",
+    "title": "Moment generating functions (MGFs) - moments, MGF definition",
+    "readings": ["Worksheet 1.1", "Course notes (old) 1.8.1-1.8.3", "Course notes (new) 1.9.1-1.9.3", "RICE (3rd edition) 4.5"],
+    "links": []
+  },
+  {
+    "course_code": "STAT 305",
+    "date": "2026-09-14",
+    "title": "MGFs - linear function and linear combinations of random variables",
+    "readings": ["Worksheet 1.2", "Course notes (old) 1.8.4, 1.8.5", "Course notes (new) 1.9.4-1.9.5", "RICE (3rd edition) 4.5"],
+    "links": []
+  },
+  {
+    "course_code": "STAT 305",
+    "date": "2026-09-16",
+    "title": "Binomial and Poisson approximation via MGF",
+    "readings": ["Worksheet 1.3"],
+    "links": []
+  },
+  {
+    "course_code": "STAT 305",
+    "date": "2026-09-18",
+    "title": "Normal distribution: properties and distributions from the normal",
+    "readings": ["Worksheet 2.1", "Course notes (old) 2.1-2.3", "Course notes (new) 2.1-2.3", "RICE (3rd edition) 6.2"],
+    "links": []
+  },
+  {
+    "course_code": "STAT 305",
+    "date": "2026-09-21",
+    "title": "Normal distribution: properties of the sample mean and sample variance",
+    "readings": ["Worksheet 2.2", "Course notes (old) 2.4", "Course notes (new) 2.4", "RICE (3rd edition) 6.3"],
+    "links": []
+  },
+  {
+    "course_code": "STAT 305",
+    "date": "2026-09-23",
+    "title": "Approximate normal distributions; central limit theorem",
+    "readings": ["Worksheet 2.3", "Course notes (old) 2.5", "Course notes (new) 2.5", "RICE (3rd edition) 5.3"],
+    "links": []
+  },
+  {
+    "course_code": "STAT 305",
+    "date": "2026-09-25",
+    "title": "Estimation and the frequentist view",
+    "readings": ["Worksheet 3.1", "Course notes (old) 3.1, 3.2", "Course notes (new) 3.1-3.2", "RICE (3rd edition) 5.2, 8.1-8.3"],
+    "links": []
+  },
+  {
+    "course_code": "STAT 305",
+    "date": "2026-09-28",
+    "title": "Properties of estimators",
+    "readings": ["Worksheet 3.2", "Course notes (old) 3.3", "Course notes (new) 3.3"],
+    "links": []
+  },
+  {
+    "course_code": "STAT 305",
+    "date": "2026-09-30",
+    "title": "Truth and Reconciliation (no class)",
+    "readings": [],
+    "links": []
+  },
+  {
+    "course_code": "STAT 305",
+    "date": "2026-10-02",
+    "title": "Introduction to maximum likelihood",
+    "readings": ["Worksheet 4.1", "Course notes (old) 4.1", "Course notes (new) 4.1-4.4", "RICE (3rd edition) 8.5"],
+    "links": []
+  },
+  {
+    "course_code": "STAT 305",
+    "date": "2026-10-05",
+    "title": "ML estimates; properties of ML estimators",
+    "readings": ["Worksheet 4.2", "Course notes (old) 4.2-4.4", "Course notes (new) 4.5-4.7", "RICE (3rd edition) 8.5.2"],
+    "links": []
+  },
+  {
+    "course_code": "STAT 305",
+    "date": "2026-10-07",
+    "title": "Properties of ML estimators: variance and confidence intervals",
+    "readings": ["Worksheet 4.3", "Course notes (old) 4.5-4.6", "Course notes (new) 4.8-4.9", "RICE (3rd edition) 8.5.3"],
+    "links": []
+  },
+  {
+    "course_code": "STAT 305",
+    "date": "2026-10-09",
+    "title": "ML estimation - several parameters",
+    "readings": ["Worksheet 5.1", "Course notes (old) 5.1, 5.2", "Course notes (new) 5.1-5.2"],
+    "links": []
+  },
+  {
+    "course_code": "STAT 305",
+    "date": "2026-10-12",
+    "title": "No Class or Lab (Thanksgiving)",
+    "readings": [],
+    "links": []
+  },
+  {
+    "course_code": "STAT 305",
+    "date": "2026-10-16",
+    "title": "ML estimation - variances of estimators and confidence intervals",
+    "readings": ["Worksheet 5.2", "Course notes (old) 5.3-5.5", "Course notes (new) 5.3-5.5"],
+    "links": []
+  },
+  {
+    "course_code": "STAT 305",
+    "date": "2026-10-19",
+    "title": "Bayes' Rule",
+    "readings": ["Worksheet 6.1", "Course notes (old) 6.1, 6.2", "RICE (3rd edition) 8.6"],
+    "links": []
+  },
+  {
+    "course_code": "STAT 305",
+    "date": "2026-10-21",
+    "title": "Bayes' Rule for a continuous parameter",
+    "readings": ["Worksheet 6.2", "Course notes (old) 6.3", "RICE (3rd edition) 8.6"],
+    "links": []
+  },
+  {
+    "course_code": "STAT 305",
+    "date": "2026-10-23",
+    "title": "Computing the posterior",
+    "readings": ["Worksheet 6.3", "Course notes (old) 6.4"],
+    "links": []
+  },
+  {
+    "course_code": "STAT 305",
+    "date": "2026-10-26",
+    "title": "Does the prior matter?",
+    "readings": ["Worksheet 6.4", "Course notes (old) 6.6"],
+    "links": []
+  },
+  {
+    "course_code": "STAT 305",
+    "date": "2026-10-28",
+    "title": "Bayesian and ML methods compared (review for Quiz 2)",
+    "readings": ["Worksheet 6.5"],
+    "links": []
+  },
+  {
+    "course_code": "STAT 305",
+    "date": "2026-10-30",
+    "title": "Hypothesis tests",
+    "readings": ["Worksheet 7.1", "Course notes (old) 7.1-7.2", "RICE (3rd edition) 9.1"],
+    "links": []
+  },
+  {
+    "course_code": "STAT 305",
+    "date": "2026-11-02",
+    "title": "Hypothesis tests - errors, significance level, power",
+    "readings": ["Worksheet 7.2", "Course notes (old) 7.3"],
+    "links": []
+  },
+  {
+    "course_code": "STAT 305",
+    "date": "2026-11-06",
+    "title": "Hypothesis tests and the likelihood function",
+    "readings": ["Worksheet 7.3"],
+    "links": []
+  },
+  {
+    "course_code": "STAT 305",
+    "date": "2026-11-09",
+    "title": "Reading break",
+    "readings": [],
+    "links": []
+  },
+  {
+    "course_code": "STAT 305",
+    "date": "2026-11-11",
+    "title": "Reading break",
+    "readings": [],
+    "links": []
+  },
+  {
+    "course_code": "STAT 305",
+    "date": "2026-11-13",
+    "title": "Neyman-Pearson lemma and composite hypotheses",
+    "readings": ["Worksheet 7.4", "Course notes (old) 7.4", "RICE (3rd edition) 9.2"],
+    "links": []
+  },
+  {
+    "course_code": "STAT 305",
+    "date": "2026-11-16",
+    "title": "Generalized likelihood ratio tests",
+    "readings": ["Worksheet 7.5", "Course notes (old) 7.5"],
+    "links": []
+  },
+  {
+    "course_code": "STAT 305",
+    "date": "2026-11-20",
+    "title": "Normal distribution; p-values; connection with confidence intervals",
+    "readings": ["Worksheet 7.6", "Course notes (old) 7.6-7.9", "RICE (3rd edition) 9.3"],
+    "links": []
+  },
+  {
+    "course_code": "STAT 305",
+    "date": "2026-11-23",
+    "title": "Analysis of categorical data: multinomial distribution",
+    "readings": ["Worksheet 8.1", "Course notes (old) 8.1, 8.2", "RICE (3rd edition) 8.5.1"],
+    "links": []
+  },
+  {
+    "course_code": "STAT 305",
+    "date": "2026-11-25",
+    "title": "Hypothesis tests for the multinomial distribution",
+    "readings": ["Worksheet 8.2", "Course notes (old) 8.3", "RICE (3rd edition) 9.4"],
+    "links": []
+  },
+  {
+    "course_code": "STAT 305",
+    "date": "2026-11-27",
+    "title": "Comparing multinomial distributions; contingency tables",
+    "readings": ["Worksheet 9.2", "Course notes (old) 9.3, 9.4", "RICE (3rd edition) 13.3, 13.4"],
+    "links": []
+  },
+  {
+    "course_code": "STAT 305",
+    "date": "2026-11-30",
+    "title": "Goodness of fit test",
+    "readings": ["Worksheet 8.3", "Course notes (old) 8.4", "RICE (3rd edition) 9.5"],
+    "links": []
+  },
+  {
+    "course_code": "STAT 305",
+    "date": "2026-12-02",
+    "title": "Comparing two independent samples",
+    "readings": ["Worksheet 9.1", "Course notes (old) 9.1, 9.2", "RICE (3rd edition) 11.2.1, 11.2.2"],
+    "links": []
+  },
+  {
+    "course_code": "STAT 305",
+    "date": "2026-12-04",
+    "title": "Paired comparisons",
+    "readings": ["Worksheet 9.3", "Course notes (old) 9.5"],
+    "links": []
+  },
+  {
+    "course_code": "STAT 305",
+    "date": "2026-12-07",
+    "title": "Wrap-up: bring your questions, material you would like reviewed, etc.",
+    "readings": [],
+    "links": []
+  }
+]
