@@ -1,0 +1,135 @@
+[
+  {
+    "type": "assignment",
+    "name": "Homework 1",
+    "start_date": null,
+    "due_date": "2026-09-26",
+    "course_code": "STAT 406",
+    "worth_pct": 10
+  },
+  {
+    "type": "assignment",
+    "name": "Homework 2",
+    "start_date": null,
+    "due_date": "2026-10-10",
+    "course_code": "STAT 406",
+    "worth_pct": 10
+  },
+  {
+    "type": "assignment",
+    "name": "Homework 3",
+    "start_date": null,
+    "due_date": "2026-11-07",
+    "course_code": "STAT 406",
+    "worth_pct": 10
+  },
+  {
+    "type": "assignment",
+    "name": "Homework 4",
+    "start_date": null,
+    "due_date": "2026-11-28",
+    "course_code": "STAT 406",
+    "worth_pct": 10
+  },
+  {
+    "type": "assignment",
+    "name": "Lab 00",
+    "start_date": "2026-09-14",
+    "due_date": "2026-09-19",
+    "course_code": "STAT 406",
+    "worth_pct": 2
+  },
+  {
+    "type": "assignment",
+    "name": "Lab 01",
+    "start_date": "2026-09-21",
+    "due_date": "2026-09-26",
+    "course_code": "STAT 406",
+    "worth_pct": 2
+  },
+  {
+    "type": "assignment",
+    "name": "Lab 02",
+    "start_date": "2026-09-28",
+    "due_date": "2026-10-03",
+    "course_code": "STAT 406",
+    "worth_pct": 2
+  },
+  {
+    "type": "assignment",
+    "name": "Lab 03",
+    "start_date": "2026-10-05",
+    "due_date": "2026-10-10",
+    "course_code": "STAT 406",
+    "worth_pct": 2
+  },
+  {
+    "type": "assignment",
+    "name": "Lab 04",
+    "start_date": "2026-10-12",
+    "due_date": "2026-10-17",
+    "course_code": "STAT 406",
+    "worth_pct": 2
+  },
+  {
+    "type": "assignment",
+    "name": "Lab 05",
+    "start_date": "2026-10-26",
+    "due_date": "2026-10-31",
+    "course_code": "STAT 406",
+    "worth_pct": 2
+  },
+  {
+    "type": "assignment",
+    "name": "Lab 07",
+    "start_date": "2026-11-02",
+    "due_date": "2026-11-07",
+    "course_code": "STAT 406",
+    "worth_pct": 2
+  },
+  {
+    "type": "assignment",
+    "name": "Lab 08",
+    "start_date": "2026-11-16",
+    "due_date": "2026-11-21",
+    "course_code": "STAT 406",
+    "worth_pct": 2
+  },
+  {
+    "type": "assignment",
+    "name": "Lab 09",
+    "start_date": "2026-11-23",
+    "due_date": "2026-11-28",
+    "course_code": "STAT 406",
+    "worth_pct": 2
+  },
+  {
+    "type": "participation",
+    "name": "Clicker Points",
+    "sort_date": "2026-12-02",
+    "course_code": "STAT 406",
+    "worth_pct": 10
+  },
+  {
+    "type": "participation",
+    "name": "Participation",
+    "sort_date": "2026-12-02",
+    "course_code": "STAT 406",
+    "worth_pct": 5
+  },
+  {
+    "type": "test",
+    "name": "Midterm Exam",
+    "date": "2026-10-27",
+    "course_code": "STAT 406",
+    "worth_pct": 12
+  },
+  {
+    "type": "final",
+    "name": "Final Exam",
+    "date": null,
+    "sort_date": "2026-12-21",
+    "course_code": "STAT 406",
+    "worth_pct": 30
+  }
+]
