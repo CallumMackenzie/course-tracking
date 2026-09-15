@@ -26,12 +26,12 @@ button, select { cursor: pointer; }
   background:
     radial-gradient(circle at 85% -30%, rgba(99, 91, 255, .7), transparent 42%),
     linear-gradient(135deg, #121827 0%, #1d2942 100%);
-  padding: 54px 28px 88px;
+  padding: 54px clamp(20px, 3.5vw, 64px) 88px;
 }
 
 .hero__inner,
 .main-content {
-  width: min(1080px, 100%);
+  width: 100%;
   margin: 0 auto;
 }
 
@@ -84,7 +84,7 @@ h1 {
 .main-content {
   position: relative;
   margin-top: -52px;
-  padding: 0 28px 64px;
+  padding: 0 clamp(20px, 3.5vw, 64px) 64px;
 }
 
 .lecture-panel,
@@ -131,9 +131,9 @@ h1 {
 
 .lecture-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 14px;
-  padding: 18px 20px 20px;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr));
+  gap: clamp(14px, 1.25vw, 22px);
+  padding: clamp(16px, 1.5vw, 24px);
 }
 
 .lecture-card {
@@ -230,7 +230,7 @@ h1 {
   padding: 19px 20px;
 }
 
-.filter-block { min-width: 0; }
+.filter-block { flex: 1 1 auto; min-width: 0; }
 .filter-label { display: block; margin-bottom: 9px; }
 
 .filter-pills {
@@ -254,7 +254,7 @@ h1 {
 .filter-pills button.active { border-color: #20293a; color: white; background: #20293a; }
 .filter-pills button span { margin-left: 4px; opacity: .65; }
 
-.course-select { flex: 0 0 170px; }
+.course-select { flex: 0 0 clamp(170px, 16vw, 240px); }
 
 .course-select select {
   width: 100%;
@@ -279,7 +279,7 @@ h1 {
 
 .list-heading h2 { margin: 0; font-size: 20px; letter-spacing: -.02em; }
 .list-heading span { color: #8b94a5; font-size: 13px; }
-.deliverable-list { padding: 4px 25px 24px; }
+.deliverable-list { padding: 4px clamp(20px, 2vw, 36px) 24px; }
 
 .course-long {
   border-top: 8px solid #f2f4f8;
@@ -354,9 +354,9 @@ h1 {
   --course-color: #64748b;
   position: relative;
   display: grid;
-  grid-template-columns: 170px minmax(0, 1fr) 118px;
+  grid-template-columns: clamp(170px, 13vw, 240px) minmax(0, 1fr) clamp(118px, 10vw, 156px);
   align-items: center;
-  gap: 20px;
+  gap: clamp(20px, 2vw, 40px);
   min-height: 114px;
   border-bottom: 1px solid #edf0f4;
   padding: 20px 4px 20px 18px;
@@ -490,6 +490,13 @@ h1 {
   font-size: 13px;
 }
 
+@media (max-width: 1024px) and (min-width: 761px) {
+  .deliverable {
+    grid-template-columns: 145px minmax(0, 1fr) 110px;
+    gap: 16px;
+  }
+}
+
 @media (max-width: 760px) {
   .hero { padding: 42px 18px 80px; }
   .hero__heading-row { align-items: flex-start; flex-direction: column; }
@@ -507,5 +514,9 @@ h1 {
 
 @media (max-width: 430px) {
   .filter-pills button { padding-inline: 9px; }
+  .deliverable { grid-template-columns: 1fr; }
+  .date-column,
+  .completion-column { grid-column: 1; }
+  .completion-column { grid-row: auto; justify-content: flex-start; }
   .deliverable h3 { font-size: 15px; }
 }
