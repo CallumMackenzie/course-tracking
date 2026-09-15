@@ -60,12 +60,6 @@ h1 {
   letter-spacing: -.045em;
 }
 
-.hero__subtitle {
-  margin: 13px 0 0;
-  color: #bdc8da;
-  font-size: 17px;
-}
-
 .date-card {
   min-width: 230px;
   border: 1px solid rgba(255, 255, 255, .14);
@@ -93,13 +87,7 @@ h1 {
   padding: 0 28px 64px;
 }
 
-.stats {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 14px;
-}
-
-.stat-card,
+.lecture-panel,
 .controls,
 .timeline {
   border: 1px solid #e4e8f0;
@@ -107,12 +95,123 @@ h1 {
   box-shadow: 0 10px 30px rgba(24, 32, 47, .06);
 }
 
-.stat-card {
-  border-radius: 16px;
-  padding: 20px 22px;
+.lecture-panel {
+  overflow: hidden;
+  border-radius: 18px;
 }
 
-.stat-card > span,
+.lecture-panel__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  border-bottom: 1px solid #e9ecf2;
+  padding: 21px 24px;
+}
+
+.lecture-panel__header h2 {
+  margin: 3px 0 0;
+  font-size: 21px;
+  letter-spacing: -.025em;
+}
+
+.lecture-panel__header > span {
+  color: #7d8798;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.lecture-panel__eyebrow {
+  color: #e5484d;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+
+.lecture-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 14px;
+  padding: 18px 20px 20px;
+}
+
+.lecture-card {
+  --course-color: #64748b;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #e6e9ef;
+  border-radius: 13px;
+  background: #fafbfc;
+  padding: 18px 19px 17px 22px;
+}
+
+.lecture-card::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 4px;
+  background: var(--course-color);
+}
+
+.lecture-card h3 {
+  margin: 10px 0 15px;
+  font-size: 17px;
+  line-height: 1.35;
+  letter-spacing: -.018em;
+}
+
+.lecture-card__section + .lecture-card__section { margin-top: 13px; }
+
+.lecture-card__section > span {
+  display: block;
+  margin-bottom: 6px;
+  color: #7b8596;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+.lecture-card__section ul {
+  margin: 0;
+  padding-left: 18px;
+  color: #586375;
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+.lecture-card__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.lecture-card__links a {
+  max-width: 100%;
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--course-color) 22%, #dfe3ea);
+  border-radius: 7px;
+  color: var(--course-color);
+  background: white;
+  padding: 6px 8px;
+  font-size: 11px;
+  font-weight: 700;
+  text-decoration: none;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.lecture-card__links a:hover { background: color-mix(in srgb, var(--course-color) 7%, white); }
+
+.lecture-panel__state {
+  padding: 38px 24px;
+  color: #8993a4;
+  text-align: center;
+}
+
+.lecture-panel__state--error { color: #912e32; background: #fff7f7; }
+
 .filter-label {
   color: #778195;
   font-size: 11px;
@@ -120,16 +219,6 @@ h1 {
   letter-spacing: .12em;
   text-transform: uppercase;
 }
-
-.stat-card strong {
-  display: block;
-  margin: 5px 0 1px;
-  font-family: "Manrope", sans-serif;
-  font-size: 29px;
-  line-height: 1;
-}
-
-.stat-card small { color: #8b94a5; }
 
 .controls {
   display: flex;
@@ -372,8 +461,8 @@ h1 {
   .hero__heading-row { align-items: flex-start; flex-direction: column; }
   .date-card { width: 100%; min-width: 0; }
   .main-content { padding-inline: 14px; }
-  .stats { grid-template-columns: 1fr 1fr; }
-  .stat-card:last-child { grid-column: 1 / -1; }
+  .lecture-panel__header { align-items: flex-start; flex-direction: column; gap: 7px; }
+  .lecture-grid { grid-template-columns: 1fr; padding-inline: 14px; }
   .controls { align-items: stretch; flex-direction: column; }
   .course-select { flex-basis: auto; }
   .deliverable-list { padding-inline: 16px; }
@@ -383,8 +472,6 @@ h1 {
 }
 
 @media (max-width: 430px) {
-  .stats { grid-template-columns: 1fr; }
-  .stat-card:last-child { grid-column: auto; }
   .filter-pills button { padding-inline: 9px; }
   .deliverable h3 { font-size: 15px; }
 }

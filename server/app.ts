@@ -1,11 +1,28 @@
 import express from "express";
 import path from "node:path";
 import { clientBuildPath } from "./config.js";
+import { loadCourseContent } from "./course-content.js";
 import { all, run } from "./db/database.js";
 
 export const app = express();
 
 app.use(express.json());
+
+app.get("/api/course-content", async (request, response) => {
+  const date = request.query.date;
+
+  if (date !== undefined && (typeof date !== "string" || !/^\d{4}-\d{2}-\d{2}$/.test(date))) {
+    response.status(400).json({ error: "Date must use YYYY-MM-DD format." });
+    return;
+  }
+
+  try {
+    response.json(await loadCourseContent(date));
+  } catch (error) {
+    console.error(error);
+    response.status(500).json({ error: "Unable to load course content." });
+  }
+});
 
 app.get("/api/deliverables", async (_request, response) => {
   try {

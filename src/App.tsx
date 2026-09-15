@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
-import type { Deliverable, DeliverableType } from "./types";
+import type { CourseContent, Deliverable, DeliverableType } from "./types";
 
 const TYPE_ORDER: DeliverableType[] = [
   "assignment",
@@ -62,6 +62,16 @@ function formatPercent(value: number) {
   return new Intl.NumberFormat("en-CA", { maximumFractionDigits: 2 }).format(value);
 }
 
+function formatResourceLabel(value: string) {
+  try {
+    const url = new URL(value);
+    const fileName = decodeURIComponent(url.pathname.split("/").filter(Boolean).at(-1) ?? "");
+    return fileName || url.hostname.replace(/^www\./, "");
+  } catch {
+    return "Course resource";
+  }
+}
+
 function sortDeliverables(items: Deliverable[]) {
   return [...items].sort((left, right) => {
     if (left.type === "final" && right.type !== "final") return 1;
@@ -80,10 +90,13 @@ function sortDeliverables(items: Deliverable[]) {
 
 export default function App() {
   const [deliverables, setDeliverables] = useState<Deliverable[]>([]);
+  const [courseContent, setCourseContent] = useState<CourseContent[]>([]);
   const [typeFilter, setTypeFilter] = useState<DeliverableType | "all">("all");
   const [courseFilter, setCourseFilter] = useState("all");
   const [loading, setLoading] = useState(true);
+  const [contentLoading, setContentLoading] = useState(true);
   const [error, setError] = useState("");
+  const [contentError, setContentError] = useState("");
   const [updatingId, setUpdatingId] = useState<number | null>(null);
   const today = localDateKey();
 
@@ -97,6 +110,17 @@ export default function App() {
       .catch((reason: Error) => setError(reason.message))
       .finally(() => setLoading(false));
   }, []);
+
+  useEffect(() => {
+    fetch(`/api/course-content?date=${encodeURIComponent(today)}`)
+      .then(async (response) => {
+        if (!response.ok) throw new Error("Could not load today's lecture content.");
+        return response.json() as Promise<CourseContent[]>;
+      })
+      .then(setCourseContent)
+      .catch((reason: Error) => setContentError(reason.message))
+      .finally(() => setContentLoading(false));
+  }, [today]);
 
   const courses = useMemo(
     () => [...new Set(deliverables.map((item) => item.course_code))].sort(),
@@ -121,15 +145,6 @@ export default function App() {
     return !itemDate || itemDate >= today;
   });
   const dividerIndex = todayIndex === -1 ? timelineItems.length : todayIndex;
-
-  const completedCount = deliverables.filter(
-    (item) => item.type !== "participation" && item.completed
-  ).length;
-  const trackableCount = deliverables.filter((item) => item.type !== "participation").length;
-  const upcomingCount = deliverables.filter((item) => {
-    const itemDate = effectiveDate(item);
-    return item.type !== "final" && Boolean(itemDate && itemDate >= today && !item.completed);
-  }).length;
 
   async function toggleCompletion(item: Deliverable) {
     if (item.type === "participation" || updatingId !== null) return;
@@ -219,7 +234,6 @@ export default function App() {
           <div className="hero__heading-row">
             <div>
               <h1>Course deliverables</h1>
-              <p className="hero__subtitle">Everything due, in one clean timeline.</p>
             </div>
             <div className="date-card">
               <span>Today</span>
@@ -230,22 +244,59 @@ export default function App() {
       </header>
 
       <main className="main-content">
-        <section className="stats" aria-label="Coursework summary">
-          <div className="stat-card">
-            <span>Upcoming</span>
-            <strong>{upcomingCount}</strong>
-            <small>dated + estimated</small>
+        <section className="lecture-panel" aria-labelledby="lecture-panel-title">
+          <div className="lecture-panel__header">
+            <div>
+              <span className="lecture-panel__eyebrow">Today</span>
+              <h2 id="lecture-panel-title">Lecture content for today</h2>
+            </div>
+            <span>{formatDate(today)}</span>
           </div>
-          <div className="stat-card">
-            <span>Completed</span>
-            <strong>{completedCount}</strong>
-            <small>of {trackableCount} trackable</small>
-          </div>
-          <div className="stat-card">
-            <span>Courses</span>
-            <strong>{courses.length}</strong>
-            <small>this term</small>
-          </div>
+
+          {contentLoading ? (
+            <div className="lecture-panel__state">Loading today&apos;s lectures…</div>
+          ) : contentError ? (
+            <div className="lecture-panel__state lecture-panel__state--error" role="alert">
+              {contentError}
+            </div>
+          ) : courseContent.length === 0 ? (
+            <div className="lecture-panel__state">No lecture content scheduled for today.</div>
+          ) : (
+            <div className="lecture-grid">
+              {courseContent.map((item) => (
+                <article
+                  key={`${item.course_code}-${item.date}-${item.title}`}
+                  className="lecture-card"
+                  style={{ "--course-color": COURSE_COLORS[item.course_code] ?? "#64748b" } as React.CSSProperties}
+                >
+                  <span className="course-badge">{item.course_code}</span>
+                  <h3>{item.title}</h3>
+
+                  {item.readings.length > 0 && (
+                    <div className="lecture-card__section">
+                      <span>Readings</span>
+                      <ul>
+                        {item.readings.map((reading) => <li key={reading}>{reading}</li>)}
+                      </ul>
+                    </div>
+                  )}
+
+                  {item.links.length > 0 && (
+                    <div className="lecture-card__section">
+                      <span>Resources</span>
+                      <div className="lecture-card__links">
+                        {item.links.map((link) => (
+                          <a key={link} href={link} target="_blank" rel="noreferrer">
+                            {formatResourceLabel(link)} <span aria-hidden="true">↗</span>
+                          </a>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </article>
+              ))}
+            </div>
+          )}
         </section>
 
         <section className="controls" aria-label="Deliverable filters">

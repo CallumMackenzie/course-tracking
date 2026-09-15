@@ -21,3 +21,11 @@ export type Deliverable = {
   worth_pct: number;
   completed: boolean;
 };
+
+export type CourseContent = {
+  course_code: string;
+  date: string;
+  title: string;
+  readings: string[];
+  links: string[];
+};
