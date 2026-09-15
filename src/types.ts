@@ -6,7 +6,7 @@ export type DeliverableType =
   | "participation";
 
 export type Deliverable = {
-  id: number;
+  id: string;
   type: DeliverableType;
   name: string;
   date: string | null;

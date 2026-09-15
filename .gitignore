@@ -15,3 +15,7 @@ course-tracking.db-wal
 *.tsbuildinfo
 
 .DS_Store
+.firebase/
+.firebaserc
+firebase-debug.log
+firebase-debug.*.log

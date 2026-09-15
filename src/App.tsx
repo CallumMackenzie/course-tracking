@@ -97,7 +97,7 @@ export default function App() {
   const [contentLoading, setContentLoading] = useState(true);
   const [error, setError] = useState("");
   const [contentError, setContentError] = useState("");
-  const [updatingId, setUpdatingId] = useState<number | null>(null);
+  const [updatingId, setUpdatingId] = useState<string | null>(null);
   const today = localDateKey();
 
   useEffect(() => {
@@ -158,7 +158,7 @@ export default function App() {
     setError("");
 
     try {
-      const response = await fetch(`/api/deliverables/${item.id}/completion`, {
+      const response = await fetch(`/api/deliverables/${encodeURIComponent(item.id)}/completion`, {
         method: "PATCH",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ completed })

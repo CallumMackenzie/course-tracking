@@ -1,0 +1,43 @@
+{
+  "functions": {
+    "source": ".",
+    "runtime": "nodejs22",
+    "ignore": [
+      ".git",
+      ".firebase",
+      "node_modules",
+      "dist",
+      "src",
+      "public",
+      "course-tracking.db*",
+      "firebase-debug.log",
+      "firebase-debug.*.log"
+    ],
+    "predeploy": ["npm run build:functions"]
+  },
+  "hosting": {
+    "public": "dist",
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+    "rewrites": [
+      {
+        "source": "/api/**",
+        "function": {
+          "functionId": "api",
+          "region": "us-west1",
+          "pinTag": true
+        }
+      },
+      { "source": "**", "destination": "/index.html" }
+    ]
+  },
+  "firestore": {
+    "rules": "firestore.rules",
+    "indexes": "firestore.indexes.json"
+  },
+  "emulators": {
+    "functions": { "host": "127.0.0.1", "port": 5002 },
+    "firestore": { "host": "127.0.0.1", "port": 8080 },
+    "hosting": { "host": "127.0.0.1", "port": 5003 },
+    "ui": { "enabled": true }
+  }
+}

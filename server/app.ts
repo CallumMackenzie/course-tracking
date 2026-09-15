@@ -1,8 +1,8 @@
 import express from "express";
-import path from "node:path";
-import { clientBuildPath } from "./config.js";
+import { FieldValue } from "firebase-admin/firestore";
 import { loadCourseContent } from "./course-content.js";
-import { all, run } from "./db/database.js";
+import { database } from "./db/database.js";
+import { importAssessmentData } from "./db/seed.js";
 
 export const app = express();
 
@@ -26,18 +26,9 @@ app.get("/api/course-content", async (request, response) => {
 
 app.get("/api/deliverables", async (_request, response) => {
   try {
-    const deliverables = await all<Record<string, unknown>>(
-      `SELECT id, type, name, date, start_date, due_date, sort_date, course_code, worth_pct,
-              points, grading_group, grading_group_worth_pct, worth_pct_estimated, completed
-       FROM deliverables`
-    );
-    response.json(
-      deliverables.map((item) => ({
-        ...item,
-        completed: Boolean(item.completed),
-        worth_pct_estimated: Boolean(item.worth_pct_estimated)
-      }))
-    );
+    await importAssessmentData();
+    const snapshot = await database.collection("deliverables").get();
+    response.json(snapshot.docs.map((document) => ({ id: document.id, ...document.data() })));
   } catch (error) {
     console.error(error);
     response.status(500).json({ error: "Unable to load deliverables." });
@@ -45,42 +36,33 @@ app.get("/api/deliverables", async (_request, response) => {
 });
 
 app.patch("/api/deliverables/:id/completion", async (request, response) => {
-  const id = Number(request.params.id);
+  const id = request.params.id;
   const completed = request.body?.completed;
 
-  if (!Number.isInteger(id) || typeof completed !== "boolean") {
+  if (!/^[A-Za-z0-9_-]{1,1500}$/.test(id) || typeof completed !== "boolean") {
     response.status(400).json({ error: "A valid id and boolean completed value are required." });
     return;
   }
 
   try {
-    const [deliverable] = await all<{ type: string }>(
-      "SELECT type FROM deliverables WHERE id = ?",
-      [id]
-    );
+    await importAssessmentData();
+    const reference = database.collection("deliverables").doc(id);
+    const deliverable = await reference.get();
 
-    if (!deliverable) {
+    if (!deliverable.exists) {
       response.status(404).json({ error: "Deliverable not found." });
       return;
     }
 
-    if (deliverable.type === "participation") {
+    if (deliverable.get("type") === "participation") {
       response.status(400).json({ error: "Participation items cannot be completed manually." });
       return;
     }
 
-    await run(
-      "UPDATE deliverables SET completed = ?, updated_at = CURRENT_TIMESTAMP WHERE id = ?",
-      [completed ? 1 : 0, id]
-    );
+    await reference.update({ completed, updated_at: FieldValue.serverTimestamp() });
     response.json({ id, completed });
   } catch (error) {
     console.error(error);
     response.status(500).json({ error: "Unable to update completion." });
   }
-});
-
-app.use(express.static(clientBuildPath));
-app.use((_request, response) => {
-  response.sendFile(path.join(clientBuildPath, "index.html"));
 });

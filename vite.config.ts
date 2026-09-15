@@ -6,7 +6,11 @@ export default defineConfig({
   server: {
     port: 5173,
     proxy: {
-      "/api": "http://localhost:3001"
+      "/api": {
+        target: "http://127.0.0.1:5002",
+        rewrite: (requestPath) =>
+          `/demo-course-tracking/us-west1/api${requestPath}`
+      }
     }
   }
 });

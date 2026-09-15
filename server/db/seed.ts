@@ -1,7 +1,9 @@
+import { createHash } from "node:crypto";
 import fs from "node:fs/promises";
 import path from "node:path";
+import { FieldValue } from "firebase-admin/firestore";
 import { assessmentDataPath } from "../config.js";
-import { run } from "./database.js";
+import { database } from "./database.js";
 
 type SeedDeliverable = {
   type: string;
@@ -18,61 +20,77 @@ type SeedDeliverable = {
   worth_pct: number;
 };
 
-export async function importAssessmentData() {
+function documentId(sourceKey: string) {
+  return Buffer.from(sourceKey).toString("base64url");
+}
+
+let importPromise: Promise<void> | undefined;
+
+export function importAssessmentData() {
+  importPromise ??= importAssessmentDataOnce().catch((error) => {
+    importPromise = undefined;
+    throw error;
+  });
+  return importPromise;
+}
+
+async function importAssessmentDataOnce() {
   const sourceFiles = (await fs.readdir(assessmentDataPath))
     .filter((file) => file.endsWith("_assessments.json"))
     .sort();
-  const importedSourceKeys: string[] = [];
+  const sourceContents = await Promise.all(
+    sourceFiles.map((file) => fs.readFile(path.join(assessmentDataPath, file), "utf8"))
+  );
+  const version = createHash("sha256").update(sourceContents.join("\n")).digest("hex");
+  const metadataRef = database.collection("_metadata").doc("assessments");
+  const metadata = await metadataRef.get();
 
-  for (const sourceFile of sourceFiles) {
-    const raw = await fs.readFile(path.join(assessmentDataPath, sourceFile), "utf8");
-    const deliverables = JSON.parse(raw) as SeedDeliverable[];
+  if (metadata.get("version") === version) return;
 
-    for (const item of deliverables) {
-      const sourceKey = `${item.course_code}|${item.type}|${item.name}`;
-      importedSourceKeys.push(sourceKey);
-      await run(
-        `
-          INSERT INTO deliverables (
-            source_key, type, name, date, start_date, due_date, sort_date, course_code,
-            worth_pct, points, grading_group, grading_group_worth_pct, worth_pct_estimated
-          ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-          ON CONFLICT(source_key) DO UPDATE SET
-            date = excluded.date,
-            start_date = excluded.start_date,
-            due_date = excluded.due_date,
-            sort_date = excluded.sort_date,
-            worth_pct = excluded.worth_pct,
-            points = excluded.points,
-            grading_group = excluded.grading_group,
-            grading_group_worth_pct = excluded.grading_group_worth_pct,
-            worth_pct_estimated = excluded.worth_pct_estimated,
-            updated_at = CURRENT_TIMESTAMP
-        `,
-        [
-          sourceKey,
-          item.type,
-          item.name,
-          item.date ?? null,
-          item.start_date ?? null,
-          item.due_date ?? null,
-          item.sort_date ?? null,
-          item.course_code,
-          item.worth_pct,
-          item.points ?? null,
-          item.grading_group ?? null,
-          item.grading_group_worth_pct ?? null,
-          item.worth_pct_estimated ? 1 : 0
-        ]
-      );
-    }
-  }
+  const deliverables = sourceContents.flatMap(
+    (raw) => JSON.parse(raw) as SeedDeliverable[]
+  );
+  const existing = await database.collection("deliverables").get();
+  const existingById = new Map(existing.docs.map((document) => [document.id, document]));
+  const importedIds = new Set<string>();
+  const batch = database.batch();
 
-  if (importedSourceKeys.length > 0) {
-    const placeholders = importedSourceKeys.map(() => "?").join(", ");
-    await run(
-      `DELETE FROM deliverables WHERE source_key NOT IN (${placeholders})`,
-      importedSourceKeys
+  for (const item of deliverables) {
+    const sourceKey = `${item.course_code}|${item.type}|${item.name}`;
+    const id = documentId(sourceKey);
+    const current = existingById.get(id);
+    importedIds.add(id);
+    batch.set(
+      database.collection("deliverables").doc(id),
+      {
+        source_key: sourceKey,
+        type: item.type,
+        name: item.name,
+        date: item.date ?? null,
+        start_date: item.start_date ?? null,
+        due_date: item.due_date ?? null,
+        sort_date: item.sort_date ?? null,
+        course_code: item.course_code,
+        worth_pct: item.worth_pct,
+        points: item.points ?? null,
+        grading_group: item.grading_group ?? null,
+        grading_group_worth_pct: item.grading_group_worth_pct ?? null,
+        worth_pct_estimated: item.worth_pct_estimated ?? false,
+        ...(current ? {} : { completed: false }),
+        updated_at: FieldValue.serverTimestamp()
+      },
+      { merge: true }
     );
   }
+
+  for (const document of existing.docs) {
+    if (!importedIds.has(document.id)) batch.delete(document.ref);
+  }
+
+  batch.set(metadataRef, {
+    version,
+    imported_at: FieldValue.serverTimestamp(),
+    item_count: deliverables.length
+  });
+  await batch.commit();
 }
