@@ -316,6 +316,40 @@ h1 {
 .deliverable-list--course-long { padding-bottom: 8px; }
 .deliverable--course-long:last-child { border-bottom-color: #e8ebf0; }
 
+.completed-section {
+  border-top: 8px solid #f2f4f8;
+  background: #f7f8fa;
+}
+
+.completed-section__heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #e3e7ed;
+  padding: 22px 25px 18px;
+}
+
+.completed-section__heading h2 {
+  margin: 2px 0 0;
+  font-size: 20px;
+  letter-spacing: -.02em;
+}
+
+.completed-section__heading > span {
+  color: #8b94a5;
+  font-size: 13px;
+}
+
+.completed-section__eyebrow {
+  color: #657184;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+}
+
+.deliverable-list--completed { padding-bottom: 8px; }
+
 .deliverable {
   --course-color: #64748b;
   position: relative;

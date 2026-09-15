@@ -136,8 +136,13 @@ export default function App() {
     return sortDeliverables(filtered);
   }, [deliverables, typeFilter, courseFilter]);
 
-  const timelineItems = visible.filter((item) => item.type !== "participation");
+  const timelineItems = visible.filter(
+    (item) => item.type !== "participation" && !item.completed
+  );
   const courseLongItems = visible.filter((item) => item.type === "participation");
+  const completedItems = visible.filter(
+    (item) => item.type !== "participation" && item.completed
+  );
 
   const todayIndex = timelineItems.findIndex((item) => {
     if (item.type === "final") return true;
@@ -379,6 +384,23 @@ export default function App() {
               <div className="deliverable-list deliverable-list--course-long">
                 {courseLongItems.map((item) => (
                   <div key={item.id}>{renderDeliverable(item, true)}</div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {!loading && completedItems.length > 0 && (
+            <div className="completed-section">
+              <div className="completed-section__heading">
+                <div>
+                  <span className="completed-section__eyebrow">Finished</span>
+                  <h2>Completed</h2>
+                </div>
+                <span>{completedItems.length} items</span>
+              </div>
+              <div className="deliverable-list deliverable-list--completed">
+                {completedItems.map((item) => (
+                  <div key={item.id}>{renderDeliverable(item)}</div>
                 ))}
               </div>
             </div>
