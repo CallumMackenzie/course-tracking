@@ -53,6 +53,19 @@ function formatDate(value: string | null) {
   }).format(new Date(`${value}T12:00:00`));
 }
 
+function daysBetween(date: string, referenceDate: string) {
+  const toUtcDay = (value: string) => {
+    const [year, month, day] = value.split("-").map(Number);
+    return Date.UTC(year, month - 1, day);
+  };
+
+  return Math.round((toUtcDay(date) - toUtcDay(referenceDate)) / 86_400_000);
+}
+
+function daysAwayLabel(daysAway: number) {
+  return daysAway === 1 ? "Tomorrow" : `In ${daysAway} days`;
+}
+
 function formatLongDate(value: string) {
   return new Intl.DateTimeFormat("en-CA", {
     weekday: "long",
@@ -268,10 +281,19 @@ export default function App() {
   }
 
   function renderDeliverable(item: Deliverable, courseLong = false) {
+    const countdownDate = officialDate(item) ?? item.sort_date;
+    const daysAway = countdownDate ? daysBetween(countdownDate, today) : null;
+    const isUpcoming = daysAway !== null && daysAway > 0;
+    const hasUrgencyColor = isUpcoming && daysAway <= 14 && item.type !== "lab";
+    const urgencyHue = hasUrgencyColor ? ((daysAway - 1) / 13) * 112 : undefined;
+
     return (
       <article
-        className={`deliverable ${courseLong ? "deliverable--course-long" : ""} ${item.completed ? "deliverable--completed" : ""}`}
-        style={{ "--course-color": COURSE_COLORS[item.course_code] ?? "#64748b" } as React.CSSProperties}
+        className={`deliverable ${courseLong ? "deliverable--course-long" : ""} ${item.completed ? "deliverable--completed" : ""} ${hasUrgencyColor ? "deliverable--soon" : ""}`}
+        style={{
+          "--course-color": COURSE_COLORS[item.course_code] ?? "#64748b",
+          ...(hasUrgencyColor ? { "--urgency-hue": urgencyHue } : {})
+        } as React.CSSProperties}
       >
         <div className="date-column">
           {courseLong ? (
@@ -288,6 +310,13 @@ export default function App() {
           )}
           {!courseLong && item.start_date && (
             <small>Opens {formatDate(item.start_date)}</small>
+          )}
+          {!courseLong && isUpcoming && (
+            <small
+              className={`days-away ${hasUrgencyColor ? "days-away--soon" : ""}`}
+            >
+              {daysAwayLabel(daysAway)}
+            </small>
           )}
         </div>
 

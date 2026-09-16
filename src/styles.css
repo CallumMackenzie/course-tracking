@@ -452,6 +452,11 @@ h1 {
   padding: 20px 4px 20px 18px;
 }
 
+.deliverable--soon {
+  border-bottom-color: hsl(var(--urgency-hue) 45% 86%);
+  background: hsl(var(--urgency-hue) 70% 95%);
+}
+
 .deliverable::before {
   content: "";
   position: absolute;
@@ -466,6 +471,16 @@ h1 {
 .date-column > span { display: block; font-weight: 700; font-size: 14px; }
 .date-column .estimated-date { color: #98621e; }
 .date-column small { display: block; margin-top: 5px; color: #929bab; font-size: 11px; }
+.date-column .days-away {
+  display: block;
+  color: #667085;
+  font-weight: 800;
+  line-height: 1.25;
+}
+
+.date-column .days-away--soon {
+  color: hsl(var(--urgency-hue) 64% 27%);
+}
 .meta-row { display: flex; align-items: center; gap: 7px; }
 
 .course-badge,
