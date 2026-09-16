@@ -32,7 +32,7 @@
     "worth_pct": 10
   },
   {
-    "type": "assignment",
+    "type": "lab",
     "name": "Lab 00",
     "start_date": "2026-09-14",
     "due_date": "2026-09-18",
@@ -40,7 +40,7 @@
     "worth_pct": 2
   },
   {
-    "type": "assignment",
+    "type": "lab",
     "name": "Lab 01",
     "start_date": "2026-09-21",
     "due_date": "2026-09-25",
@@ -48,7 +48,7 @@
     "worth_pct": 2
   },
   {
-    "type": "assignment",
+    "type": "lab",
     "name": "Lab 02",
     "start_date": "2026-09-28",
     "due_date": "2026-10-02",
@@ -56,7 +56,7 @@
     "worth_pct": 2
   },
   {
-    "type": "assignment",
+    "type": "lab",
     "name": "Lab 03",
     "start_date": "2026-10-05",
     "due_date": "2026-10-09",
@@ -64,7 +64,7 @@
     "worth_pct": 2
   },
   {
-    "type": "assignment",
+    "type": "lab",
     "name": "Lab 04",
     "start_date": "2026-10-12",
     "due_date": "2026-10-16",
@@ -72,7 +72,7 @@
     "worth_pct": 2
   },
   {
-    "type": "assignment",
+    "type": "lab",
     "name": "Lab 05",
     "start_date": "2026-10-26",
     "due_date": "2026-10-30",
@@ -80,7 +80,7 @@
     "worth_pct": 2
   },
   {
-    "type": "assignment",
+    "type": "lab",
     "name": "Lab 07",
     "start_date": "2026-11-02",
     "due_date": "2026-11-06",
@@ -88,7 +88,7 @@
     "worth_pct": 2
   },
   {
-    "type": "assignment",
+    "type": "lab",
     "name": "Lab 08",
     "start_date": "2026-11-16",
     "due_date": "2026-11-20",
@@ -96,7 +96,7 @@
     "worth_pct": 2
   },
   {
-    "type": "assignment",
+    "type": "lab",
     "name": "Lab 09",
     "start_date": "2026-11-23",
     "due_date": "2026-11-27",

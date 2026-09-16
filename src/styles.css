@@ -481,6 +481,7 @@ h1 {
 
 .course-badge { color: var(--course-color); background: color-mix(in srgb, var(--course-color) 10%, white); }
 .type-badge { color: #637084; background: #eef1f5; }
+.type-badge--lab { color: #176b87; background: #e2f4fa; }
 .type-badge--final { color: #9c2d2d; background: #fee8e8; }
 .type-badge--test { color: #824b14; background: #fff0d8; }
 .type-badge--quiz { color: #5c3aa8; background: #eee8ff; }

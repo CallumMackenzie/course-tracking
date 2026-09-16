@@ -5,6 +5,7 @@ type AuthState = "checking" | "locked" | "unlocked";
 
 const TYPE_ORDER: DeliverableType[] = [
   "assignment",
+  "lab",
   "quiz",
   "test",
   "final",
@@ -13,6 +14,7 @@ const TYPE_ORDER: DeliverableType[] = [
 
 const TYPE_LABELS: Record<DeliverableType, string> = {
   assignment: "Assignments",
+  lab: "Labs",
   quiz: "Quizzes",
   test: "Tests",
   final: "Finals",

@@ -1,5 +1,6 @@
 export type DeliverableType =
   | "assignment"
+  | "lab"
   | "quiz"
   | "test"
   | "final"

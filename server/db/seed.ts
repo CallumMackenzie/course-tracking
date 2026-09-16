@@ -52,6 +52,12 @@ async function importAssessmentDataOnce() {
   );
   const existing = await database.collection("deliverables").get();
   const existingById = new Map(existing.docs.map((document) => [document.id, document]));
+  const existingByCourseAndName = new Map(
+    existing.docs.map((document) => [
+      `${document.get("course_code")}|${document.get("name")}`,
+      document
+    ])
+  );
   const importedIds = new Set<string>();
   const batch = database.batch();
 
@@ -59,6 +65,7 @@ async function importAssessmentDataOnce() {
     const sourceKey = `${item.course_code}|${item.type}|${item.name}`;
     const id = documentId(sourceKey);
     const current = existingById.get(id);
+    const previous = current ?? existingByCourseAndName.get(`${item.course_code}|${item.name}`);
     importedIds.add(id);
     batch.set(
       database.collection("deliverables").doc(id),
@@ -76,7 +83,7 @@ async function importAssessmentDataOnce() {
         grading_group: item.grading_group ?? null,
         grading_group_worth_pct: item.grading_group_worth_pct ?? null,
         worth_pct_estimated: item.worth_pct_estimated ?? false,
-        ...(current ? {} : { completed: false }),
+        ...(current ? {} : { completed: previous?.get("completed") ?? false }),
         updated_at: FieldValue.serverTimestamp()
       },
       { merge: true }
