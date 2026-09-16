@@ -2,7 +2,7 @@
   {
     "course_code": "STAT 305",
     "date": "2026-09-09",
-    "title": "Introduction",
+    "title": "Introduction; HW #0 diagnostic of MATH/STAT 302 prerequisite",
     "readings": [],
     "links": []
   },
@@ -106,6 +106,13 @@
   },
   {
     "course_code": "STAT 305",
+    "date": "2026-10-14",
+    "title": "Quiz #1 (covers material to the end of Chapter 3)",
+    "readings": [],
+    "links": []
+  },
+  {
+    "course_code": "STAT 305",
     "date": "2026-10-16",
     "title": "ML estimation - variances of estimators and confidence intervals",
     "readings": ["Worksheet 5.2", "Course notes (old) 5.3-5.5", "Course notes (new) 5.3-5.5"],
@@ -162,6 +169,13 @@
   },
   {
     "course_code": "STAT 305",
+    "date": "2026-11-04",
+    "title": "Quiz #2 (covers material to the end of Chapter 5)",
+    "readings": [],
+    "links": []
+  },
+  {
+    "course_code": "STAT 305",
     "date": "2026-11-06",
     "title": "Hypothesis tests and the likelihood function",
     "readings": ["Worksheet 7.3"],
@@ -193,6 +207,13 @@
     "date": "2026-11-16",
     "title": "Generalized likelihood ratio tests",
     "readings": ["Worksheet 7.5", "Course notes (old) 7.5"],
+    "links": []
+  },
+  {
+    "course_code": "STAT 305",
+    "date": "2026-11-18",
+    "title": "Quiz #3 (covers material to Worksheet 7.3)",
+    "readings": [],
     "links": []
   },
   {

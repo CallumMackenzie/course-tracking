@@ -298,9 +298,15 @@ export default function App() {
           </div>
           <h3>{item.name}</h3>
           <p>
-            {item.worth_pct_estimated && "~"}{formatPercent(item.worth_pct)}% of course grade
-            {item.points != null && ` · ${item.points} pts`}
-            {item.grading_group && ` · ${item.grading_group}`}
+            {item.type === "lab" && item.worth_pct === 0 ? (
+              "Scheduled lab"
+            ) : (
+              <>
+                {item.worth_pct_estimated && "~"}{formatPercent(item.worth_pct)}% of course grade
+                {item.points != null && ` · ${item.points} pts`}
+                {item.grading_group && ` · ${item.grading_group}`}
+              </>
+            )}
           </p>
         </div>
 

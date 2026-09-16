@@ -29,11 +29,73 @@
     "worth_pct": 40
   },
   {
+    "type": "lab",
+    "name": "Lab 1 — Intro topics (R, etc.)",
+    "date": "2026-09-14",
+    "course_code": "STAT 305",
+    "worth_pct": 0
+  },
+  {
+    "type": "lab",
+    "name": "Lab 2 — MGFs",
+    "date": "2026-09-21",
+    "course_code": "STAT 305",
+    "worth_pct": 0
+  },
+  {
+    "type": "lab",
+    "name": "Lab 3 — Consistency of S²",
+    "date": "2026-10-05",
+    "course_code": "STAT 305",
+    "worth_pct": 0
+  },
+  {
+    "type": "lab",
+    "name": "Lab 4 — ML for geometric distributions",
+    "date": "2026-10-12",
+    "course_code": "STAT 305",
+    "worth_pct": 0
+  },
+  {
+    "type": "lab",
+    "name": "Lab 5 — More MLE",
+    "date": "2026-10-19",
+    "course_code": "STAT 305",
+    "worth_pct": 0
+  },
+  {
+    "type": "lab",
+    "name": "Lab 6 — Bayes: exponential distribution",
+    "date": "2026-10-26",
+    "course_code": "STAT 305",
+    "worth_pct": 0
+  },
+  {
+    "type": "lab",
+    "name": "Lab 7 — Hypothesis tests: formulation",
+    "date": "2026-11-02",
+    "course_code": "STAT 305",
+    "worth_pct": 0
+  },
+  {
+    "type": "lab",
+    "name": "Lab 8 — Hypothesis tests: NP lemma",
+    "date": "2026-11-16",
+    "course_code": "STAT 305",
+    "worth_pct": 0
+  },
+  {
+    "type": "lab",
+    "name": "Lab 9 — Categorical data analysis",
+    "date": "2026-11-30",
+    "course_code": "STAT 305",
+    "worth_pct": 0
+  },
+  {
     "type": "assignment",
     "name": "HW 0",
-    "start_date": null,
-    "due_date": null,
-    "sort_date": "2026-09-24",
+    "start_date": "2026-09-09",
+    "due_date": "2026-09-25",
     "course_code": "STAT 305",
     "worth_pct": 0.8,
     "points": 4,
@@ -43,7 +105,7 @@
   {
     "type": "assignment",
     "name": "HW 1",
-    "start_date": null,
+    "start_date": "2026-09-14",
     "due_date": "2026-10-02",
     "course_code": "STAT 305",
     "worth_pct": 0.6,
@@ -54,7 +116,7 @@
   {
     "type": "assignment",
     "name": "HW 2",
-    "start_date": null,
+    "start_date": "2026-09-21",
     "due_date": "2026-10-09",
     "course_code": "STAT 305",
     "worth_pct": 0.8,
@@ -65,7 +127,7 @@
   {
     "type": "assignment",
     "name": "HW 3",
-    "start_date": null,
+    "start_date": "2026-10-05",
     "due_date": "2026-10-23",
     "course_code": "STAT 305",
     "worth_pct": 0.8,
@@ -76,7 +138,7 @@
   {
     "type": "assignment",
     "name": "HW 4",
-    "start_date": null,
+    "start_date": "2026-10-19",
     "due_date": "2026-11-06",
     "course_code": "STAT 305",
     "worth_pct": 0.6,
@@ -87,7 +149,7 @@
   {
     "type": "assignment",
     "name": "HW 5",
-    "start_date": null,
+    "start_date": "2026-11-02",
     "due_date": "2026-11-27",
     "course_code": "STAT 305",
     "worth_pct": 0.4,
@@ -98,7 +160,7 @@
   {
     "type": "assignment",
     "name": "HW 6",
-    "start_date": null,
+    "start_date": "2026-11-23",
     "due_date": "2026-12-07",
     "course_code": "STAT 305",
     "worth_pct": 1,
