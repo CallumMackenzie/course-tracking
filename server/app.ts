@@ -1,5 +1,6 @@
 import express from "express";
 import { FieldValue } from "firebase-admin/firestore";
+import { requireAccessToken } from "./auth.js";
 import { loadCourseContent } from "./course-content.js";
 import { database } from "./db/database.js";
 import { importAssessmentData } from "./db/seed.js";
@@ -7,6 +8,12 @@ import { importAssessmentData } from "./db/seed.js";
 export const app = express();
 
 app.use(express.json());
+
+app.post("/api/auth", requireAccessToken, (_request, response) => {
+  response.status(204).end();
+});
+
+app.use("/api", requireAccessToken);
 
 app.get("/api/course-content", async (request, response) => {
   const date = request.query.date;

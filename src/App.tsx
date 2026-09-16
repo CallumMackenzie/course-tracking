@@ -1,6 +1,8 @@
 import { useEffect, useMemo, useState } from "react";
 import type { CourseContent, Deliverable, DeliverableType } from "./types";
 
+type AuthState = "checking" | "locked" | "unlocked";
+
 const TYPE_ORDER: DeliverableType[] = [
   "assignment",
   "quiz",
@@ -89,6 +91,10 @@ function sortDeliverables(items: Deliverable[]) {
 }
 
 export default function App() {
+  const [authState, setAuthState] = useState<AuthState>("checking");
+  const [accessToken, setAccessToken] = useState("");
+  const [tokenInput, setTokenInput] = useState("");
+  const [authError, setAuthError] = useState("");
   const [deliverables, setDeliverables] = useState<Deliverable[]>([]);
   const [courseContent, setCourseContent] = useState<CourseContent[]>([]);
   const [typeFilter, setTypeFilter] = useState<DeliverableType | "all">("all");
@@ -101,26 +107,107 @@ export default function App() {
   const today = localDateKey();
 
   useEffect(() => {
-    fetch("/api/deliverables")
+    const savedToken = window.sessionStorage.getItem("courseTrackerAccessToken");
+
+    if (!savedToken) {
+      setAuthState("locked");
+      return;
+    }
+
+    verifyAccess(savedToken)
+      .then((valid) => {
+        if (!valid) {
+          window.sessionStorage.removeItem("courseTrackerAccessToken");
+          setAuthState("locked");
+          return;
+        }
+
+        setAccessToken(savedToken);
+        setAuthState("unlocked");
+      })
+      .catch(() => {
+        setAuthError("Could not verify access. Please try again.");
+        setAuthState("locked");
+      });
+  }, []);
+
+  useEffect(() => {
+    if (authState !== "unlocked") return;
+
+    setLoading(true);
+    fetch("/api/deliverables", {
+      headers: { Authorization: `Bearer ${accessToken}` }
+    })
       .then(async (response) => {
+        if (response.status === 401) lockApp();
         if (!response.ok) throw new Error("Could not load your coursework.");
         return response.json() as Promise<Deliverable[]>;
       })
       .then(setDeliverables)
       .catch((reason: Error) => setError(reason.message))
       .finally(() => setLoading(false));
-  }, []);
+  }, [accessToken, authState]);
 
   useEffect(() => {
-    fetch(`/api/course-content?date=${encodeURIComponent(today)}`)
+    if (authState !== "unlocked") return;
+
+    setContentLoading(true);
+    fetch(`/api/course-content?date=${encodeURIComponent(today)}`, {
+      headers: { Authorization: `Bearer ${accessToken}` }
+    })
       .then(async (response) => {
+        if (response.status === 401) lockApp();
         if (!response.ok) throw new Error("Could not load today's lecture content.");
         return response.json() as Promise<CourseContent[]>;
       })
       .then(setCourseContent)
       .catch((reason: Error) => setContentError(reason.message))
       .finally(() => setContentLoading(false));
-  }, [today]);
+  }, [accessToken, authState, today]);
+
+  async function verifyAccess(token: string) {
+    const response = await fetch("/api/auth", {
+      method: "POST",
+      headers: { Authorization: `Bearer ${token}` }
+    });
+
+    if (response.status === 401) return false;
+    if (!response.ok) throw new Error("Unable to verify access.");
+    return true;
+  }
+
+  async function unlockApp(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    const token = tokenInput.trim();
+    if (!token) return;
+
+    setAuthState("checking");
+    setAuthError("");
+
+    try {
+      if (!(await verifyAccess(token))) {
+        setAuthError("That access token is not valid.");
+        setAuthState("locked");
+        return;
+      }
+
+      window.sessionStorage.setItem("courseTrackerAccessToken", token);
+      setAccessToken(token);
+      setTokenInput("");
+      setAuthState("unlocked");
+    } catch {
+      setAuthError("Could not verify access. Please try again.");
+      setAuthState("locked");
+    }
+  }
+
+  function lockApp() {
+    window.sessionStorage.removeItem("courseTrackerAccessToken");
+    setAccessToken("");
+    setDeliverables([]);
+    setCourseContent([]);
+    setAuthState("locked");
+  }
 
   const courses = useMemo(
     () => [...new Set(deliverables.map((item) => item.course_code))].sort(),
@@ -160,9 +247,13 @@ export default function App() {
     try {
       const response = await fetch(`/api/deliverables/${encodeURIComponent(item.id)}/completion`, {
         method: "PATCH",
-        headers: { "Content-Type": "application/json" },
+        headers: {
+          Authorization: `Bearer ${accessToken}`,
+          "Content-Type": "application/json"
+        },
         body: JSON.stringify({ completed })
       });
+      if (response.status === 401) lockApp();
       if (!response.ok) throw new Error("Could not save that change.");
       setDeliverables((current) =>
         current.map((entry) => (entry.id === item.id ? { ...entry, completed } : entry))
@@ -231,18 +322,50 @@ export default function App() {
     );
   }
 
+  if (authState !== "unlocked") {
+    return (
+      <main className="auth-shell">
+        <section className="auth-card" aria-labelledby="auth-title">
+          <p className="eyebrow">Private course tracker</p>
+          <h1 id="auth-title">Callum Mackenzie&apos;s Course Deliverables</h1>
+          <p>Enter the access token to continue.</p>
+          <form onSubmit={unlockApp}>
+            <label htmlFor="access-token">Access token</label>
+            <input
+              id="access-token"
+              type="password"
+              autoComplete="current-password"
+              spellCheck={false}
+              value={tokenInput}
+              disabled={authState === "checking"}
+              onChange={(event) => setTokenInput(event.target.value)}
+              autoFocus
+            />
+            {authError && <div className="auth-error" role="alert">{authError}</div>}
+            <button type="submit" disabled={authState === "checking" || !tokenInput.trim()}>
+              {authState === "checking" ? "Checking…" : "Unlock tracker"}
+            </button>
+          </form>
+        </section>
+      </main>
+    );
+  }
+
   return (
     <div className="app-shell">
       <header className="hero">
         <div className="hero__inner">
-          <p className="eyebrow">2026 · Winter Term 1</p>
           <div className="hero__heading-row">
             <div>
-              <h1>Course deliverables</h1>
+              <p className="eyebrow">2026 · Winter Term 1</p>
+              <h1>Callum Mackenzie&apos;s Course Deliverables</h1>
             </div>
-            <div className="date-card">
-              <span>Today</span>
-              <strong>{formatLongDate(today)}</strong>
+            <div className="hero__actions">
+              <div className="date-card">
+                <span>Today</span>
+                <strong>{formatLongDate(today)}</strong>
+              </div>
+              <button className="lock-button" type="button" onClick={lockApp}>Lock</button>
             </div>
           </div>
         </div>

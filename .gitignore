@@ -19,3 +19,4 @@ course-tracking.db-wal
 .firebaserc
 firebase-debug.log
 firebase-debug.*.log
+*access-token*

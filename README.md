@@ -43,9 +43,14 @@ npm run deploy
 The first request to `/api/deliverables` seeds the `deliverables` collection. No separate database
 migration command is required. The old local `course-tracking.db` is not read or deployed.
 
-> The API retains the original single-user/no-login behavior. Firestore cannot be accessed
-> directly, but anyone who can reach the site can toggle completion state through the API. Add
-> Firebase Authentication before sharing the URL with untrusted users.
+## Access control
+
+The tracker is protected by the `COURSE_TRACKER_ACCESS_TOKEN` Firebase Secret Manager secret.
+The browser verifies an entered token through `/api/auth`, retains it only in `sessionStorage`, and
+sends it as a Bearer token to the API. Firestore remains inaccessible directly from the browser.
+
+Token files must stay outside the repository; matching filenames are also ignored defensively.
+Redeploy the Function after rotating the secret so the new secret version is attached.
 
 ## Local development
 
