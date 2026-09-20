@@ -1,7 +1,7 @@
 [
   {
     "type": "assignment",
-    "name": "Assignment 0: Introduction to Python for Computer Vision",
+    "name": "Assignment 0 (Optional): Introduction to Python for Computer Vision",
     "start_date": "2026-09-10",
     "due_date": "2026-09-17",
     "course_code": "CPSC 425",
@@ -10,8 +10,8 @@
   {
     "type": "assignment",
     "name": "Assignment 1: Image Filtering and Hybrid Images",
-    "start_date": "2026-09-15",
-    "due_date": "2026-09-24",
+    "start_date": "2026-09-17",
+    "due_date": "2026-09-29",
     "course_code": "CPSC 425",
     "worth_pct": 5
   },
