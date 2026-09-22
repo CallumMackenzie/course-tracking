@@ -1,9 +1,10 @@
 import express from "express";
 import { FieldValue } from "firebase-admin/firestore";
-import { requireAccessToken } from "./auth.js";
+import { requireAccessToken, requireMcpAccessToken } from "./auth.js";
 import { loadCourseContent } from "./course-content.js";
 import { database } from "./db/database.js";
 import { importAssessmentData } from "./db/seed.js";
+import { handleMcpRequest } from "./mcp.js";
 
 export const app = express();
 
@@ -11,6 +12,15 @@ app.use(express.json());
 
 app.post("/api/auth", requireAccessToken, (_request, response) => {
   response.status(204).end();
+});
+
+app.post("/api/mcp", requireMcpAccessToken, handleMcpRequest);
+app.all("/api/mcp", requireMcpAccessToken, (_request, response) => {
+  response.status(405).json({
+    jsonrpc: "2.0",
+    error: { code: -32000, message: "Method not allowed." },
+    id: null
+  });
 });
 
 app.use("/api", requireAccessToken);

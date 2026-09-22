@@ -52,6 +52,17 @@ sends it as a Bearer token to the API. Firestore remains inaccessible directly f
 Token files must stay outside the repository; matching filenames are also ignored defensively.
 Redeploy the Function after rotating the secret so the new secret version is attached.
 
+## MCP access
+
+Agents can read assessment and daily course information through a stateless Streamable HTTP MCP
+endpoint at `/api/mcp`. It uses the separate `COURSE_TRACKER_MCP_TOKEN` Firebase Secret Manager
+secret; this token does not authorize the browser API or completion updates. The MCP server exposes
+read-only tools for listing and fetching assessments, retrieving a daily schedule, and listing
+upcoming assessments.
+
+Configure MCP clients to send the scoped token as a Bearer token using their protected credential
+storage. Do not place the token in a repository file, URL, or command-line argument.
+
 ## Local development
 
 The Firestore emulator requires Java 11 or newer. Start Vite, the Functions emulator, and the

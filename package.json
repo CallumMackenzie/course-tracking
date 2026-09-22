@@ -17,12 +17,15 @@
     "build:functions": "tsc -p tsconfig.server.json",
     "build:client": "vite build",
     "deploy": "npm run build && firebase deploy",
+    "test:mcp": "npm run build:functions && node --test tests/mcp.integration.test.mjs",
     "typecheck": "tsc --noEmit && tsc -p tsconfig.server.json --noEmit"
   },
   "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.30.0",
     "express": "^5.2.1",
     "firebase-admin": "^14.4.0",
-    "firebase-functions": "^7.4.0"
+    "firebase-functions": "^7.4.0",
+    "zod": "^4.6.5"
   },
   "devDependencies": {
     "@types/express": "^5.0.1",
