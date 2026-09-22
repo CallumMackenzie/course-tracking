@@ -33,63 +33,90 @@
     "name": "Lab 1 — Intro topics (R, etc.)",
     "date": "2026-09-14",
     "course_code": "STAT 305",
-    "worth_pct": 0
+    "worth_pct": 0.5555555555555556,
+    "points": 1,
+    "grading_group": "Labs",
+    "grading_group_worth_pct": 5
   },
   {
     "type": "lab",
     "name": "Lab 2 — MGFs",
     "date": "2026-09-21",
     "course_code": "STAT 305",
-    "worth_pct": 0
+    "worth_pct": 0.5555555555555556,
+    "points": 1,
+    "grading_group": "Labs",
+    "grading_group_worth_pct": 5
   },
   {
     "type": "lab",
     "name": "Lab 3 — Consistency of S²",
     "date": "2026-10-05",
     "course_code": "STAT 305",
-    "worth_pct": 0
+    "worth_pct": 0.5555555555555556,
+    "points": 1,
+    "grading_group": "Labs",
+    "grading_group_worth_pct": 5
   },
   {
     "type": "lab",
     "name": "Lab 4 — ML for geometric distributions",
     "date": "2026-10-12",
     "course_code": "STAT 305",
-    "worth_pct": 0
+    "worth_pct": 0.5555555555555556,
+    "points": 1,
+    "grading_group": "Labs",
+    "grading_group_worth_pct": 5
   },
   {
     "type": "lab",
     "name": "Lab 5 — More MLE",
     "date": "2026-10-19",
     "course_code": "STAT 305",
-    "worth_pct": 0
+    "worth_pct": 0.5555555555555556,
+    "points": 1,
+    "grading_group": "Labs",
+    "grading_group_worth_pct": 5
   },
   {
     "type": "lab",
     "name": "Lab 6 — Bayes: exponential distribution",
     "date": "2026-10-26",
     "course_code": "STAT 305",
-    "worth_pct": 0
+    "worth_pct": 0.5555555555555556,
+    "points": 1,
+    "grading_group": "Labs",
+    "grading_group_worth_pct": 5
   },
   {
     "type": "lab",
     "name": "Lab 7 — Hypothesis tests: formulation",
     "date": "2026-11-02",
     "course_code": "STAT 305",
-    "worth_pct": 0
+    "worth_pct": 0.5555555555555556,
+    "points": 1,
+    "grading_group": "Labs",
+    "grading_group_worth_pct": 5
   },
   {
     "type": "lab",
     "name": "Lab 8 — Hypothesis tests: NP lemma",
     "date": "2026-11-16",
     "course_code": "STAT 305",
-    "worth_pct": 0
+    "worth_pct": 0.5555555555555556,
+    "points": 1,
+    "grading_group": "Labs",
+    "grading_group_worth_pct": 5
   },
   {
     "type": "lab",
     "name": "Lab 9 — Categorical data analysis",
     "date": "2026-11-30",
     "course_code": "STAT 305",
-    "worth_pct": 0
+    "worth_pct": 0.5555555555555556,
+    "points": 1,
+    "grading_group": "Labs",
+    "grading_group_worth_pct": 5
   },
   {
     "type": "assignment",
