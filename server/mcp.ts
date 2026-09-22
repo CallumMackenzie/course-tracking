@@ -3,6 +3,7 @@ import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { StreamableHTTPServerTransport } from "@modelcontextprotocol/sdk/server/streamableHttp.js";
 import * as z from "zod/v4";
 import { loadCourseContent } from "./course-content.js";
+import { courseLinks, type CourseFile } from "./courses.js";
 import { database } from "./db/database.js";
 import { importAssessmentData } from "./db/seed.js";
 
@@ -30,6 +31,8 @@ type Assessment = {
   grading_group_worth_pct: number | null;
   worth_pct_estimated: boolean;
   course_code: string;
+  course_webpage: string | null;
+  course_files: CourseFile[];
   worth_pct: number;
   completed: boolean;
 };
@@ -69,6 +72,7 @@ function serializeAssessment(id: string, data: FirebaseFirestore.DocumentData): 
     grading_group_worth_pct: data.grading_group_worth_pct ?? null,
     worth_pct_estimated: data.worth_pct_estimated ?? false,
     course_code: data.course_code,
+    ...courseLinks(data.course_code),
     worth_pct: data.worth_pct,
     completed: data.completed ?? false
   };

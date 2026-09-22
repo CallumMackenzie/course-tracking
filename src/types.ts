@@ -19,12 +19,16 @@ export type Deliverable = {
   grading_group_worth_pct: number | null;
   worth_pct_estimated: boolean;
   course_code: string;
+  course_webpage: string | null;
+  course_files: { name: string; url: string }[];
   worth_pct: number;
   completed: boolean;
 };
 
 export type CourseContent = {
   course_code: string;
+  course_webpage: string | null;
+  course_files: { name: string; url: string }[];
   date: string;
   title: string;
   readings: string[];

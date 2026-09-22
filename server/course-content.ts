@@ -1,9 +1,12 @@
 import fs from "node:fs/promises";
 import path from "node:path";
 import { courseContentDataPath } from "./config.js";
+import { courseLinks, type CourseFile } from "./courses.js";
 
 export type CourseContent = {
   course_code: string;
+  course_webpage: string | null;
+  course_files: CourseFile[];
   date: string;
   title: string;
   readings: string[];
@@ -25,6 +28,7 @@ export async function loadCourseContent(date?: string) {
   return content
     .flat()
     .filter((item) => !date || item.date === date)
+    .map((item) => ({ ...item, ...courseLinks(item.course_code) }))
     .sort((left, right) =>
       left.date.localeCompare(right.date) || left.course_code.localeCompare(right.course_code)
     );

@@ -17,7 +17,7 @@
     "build:functions": "tsc -p tsconfig.server.json",
     "build:client": "vite build",
     "deploy": "npm run build && firebase deploy",
-    "test:mcp": "npm run build:functions && node --test tests/mcp.integration.test.mjs",
+    "test:mcp": "npm run build:functions && node --test tests/*.test.mjs",
     "typecheck": "tsc --noEmit && tsc -p tsconfig.server.json --noEmit"
   },
   "dependencies": {

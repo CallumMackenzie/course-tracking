@@ -58,7 +58,8 @@ Agents can read assessment and daily course information through a stateless Stre
 endpoint at `/api/mcp`. It uses the separate `COURSE_TRACKER_MCP_TOKEN` Firebase Secret Manager
 secret; this token does not authorize the browser API or completion updates. The MCP server exposes
 read-only tools for listing and fetching assessments, retrieving a daily schedule, and listing
-upcoming assessments.
+upcoming assessments. Every assessment and course-content item includes its course webpage and
+any course files hosted by this tracker.
 
 Configure MCP clients to send the scoped token as a Bearer token using their protected credential
 storage. Do not place the token in a repository file, URL, or command-line argument.
