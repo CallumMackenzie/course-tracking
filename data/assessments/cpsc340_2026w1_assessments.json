@@ -52,8 +52,7 @@
   {
     "type": "test",
     "name": "Midterm Exam",
-    "date": null,
-    "sort_date": "2026-10-26",
+    "date": "2026-10-27",
     "course_code": "CPSC 340",
     "worth_pct": 20
   },
