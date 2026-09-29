@@ -19,6 +19,15 @@ const COURSE_LINKS: Record<string, CourseLinks> = {
     course_webpage: "https://www.cs.ubc.ca/~aerion1/teaching/cpsc-425/2026w1/",
     course_files: []
   },
+  "NURS 180": {
+    course_webpage: null,
+    course_files: [
+      {
+        name: "Course syllabus",
+        url: `${HOSTING_ORIGIN}/course-files/nurs180/NURS180-Syllabus.pdf`
+      }
+    ]
+  },
   "STAT 305": {
     course_webpage: null,
     course_files: [

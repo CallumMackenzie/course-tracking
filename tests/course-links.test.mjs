@@ -29,8 +29,20 @@ test("returns the hosted STAT 305 schedule", () => {
   });
 });
 
-test("returns an empty shape for courses without configured links", () => {
+test("returns the hosted NURS 180 syllabus", () => {
   assert.deepEqual(courseLinks("NURS 180"), {
+    course_webpage: null,
+    course_files: [
+      {
+        name: "Course syllabus",
+        url: "https://callum-course-tracker.web.app/course-files/nurs180/NURS180-Syllabus.pdf"
+      }
+    ]
+  });
+});
+
+test("returns an empty shape for courses without configured links", () => {
+  assert.deepEqual(courseLinks("UNKNOWN 100"), {
     course_webpage: null,
     course_files: []
   });

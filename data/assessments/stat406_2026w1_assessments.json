@@ -111,13 +111,6 @@
     "worth_pct": 10
   },
   {
-    "type": "participation",
-    "name": "Participation",
-    "sort_date": "2026-12-02",
-    "course_code": "STAT 406",
-    "worth_pct": 5
-  },
-  {
     "type": "test",
     "name": "Midterm Exam",
     "date": "2026-10-27",
