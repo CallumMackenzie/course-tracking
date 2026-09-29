@@ -3,6 +3,8 @@ import type { CourseContent, Deliverable, DeliverableType } from "./types";
 
 type AuthState = "checking" | "locked" | "unlocked";
 
+const ACCESS_TOKEN_STORAGE_KEY = "courseTrackerAccessToken";
+
 const TYPE_ORDER: DeliverableType[] = [
   "assignment",
   "lab",
@@ -122,17 +124,25 @@ export default function App() {
   const today = localDateKey();
 
   useEffect(() => {
-    const savedToken = window.sessionStorage.getItem("courseTrackerAccessToken");
+    const persistentToken = window.localStorage.getItem(ACCESS_TOKEN_STORAGE_KEY);
+    const sessionToken = window.sessionStorage.getItem(ACCESS_TOKEN_STORAGE_KEY);
+    const savedToken = persistentToken ?? sessionToken;
 
     if (!savedToken) {
       setAuthState("locked");
       return;
     }
 
+    if (!persistentToken && sessionToken) {
+      window.localStorage.setItem(ACCESS_TOKEN_STORAGE_KEY, sessionToken);
+      window.sessionStorage.removeItem(ACCESS_TOKEN_STORAGE_KEY);
+    }
+
     verifyAccess(savedToken)
       .then((valid) => {
         if (!valid) {
-          window.sessionStorage.removeItem("courseTrackerAccessToken");
+          window.localStorage.removeItem(ACCESS_TOKEN_STORAGE_KEY);
+          window.sessionStorage.removeItem(ACCESS_TOKEN_STORAGE_KEY);
           setAuthState("locked");
           return;
         }
@@ -206,7 +216,7 @@ export default function App() {
         return;
       }
 
-      window.sessionStorage.setItem("courseTrackerAccessToken", token);
+      window.localStorage.setItem(ACCESS_TOKEN_STORAGE_KEY, token);
       setAccessToken(token);
       setTokenInput("");
       setAuthState("unlocked");
@@ -217,7 +227,8 @@ export default function App() {
   }
 
   function lockApp() {
-    window.sessionStorage.removeItem("courseTrackerAccessToken");
+    window.localStorage.removeItem(ACCESS_TOKEN_STORAGE_KEY);
+    window.sessionStorage.removeItem(ACCESS_TOKEN_STORAGE_KEY);
     setAccessToken("");
     setDeliverables([]);
     setCourseContent([]);

@@ -46,8 +46,9 @@ migration command is required. The old local `course-tracking.db` is not read or
 ## Access control
 
 The tracker is protected by the `COURSE_TRACKER_ACCESS_TOKEN` Firebase Secret Manager secret.
-The browser verifies an entered token through `/api/auth`, retains it only in `sessionStorage`, and
-sends it as a Bearer token to the API. Firestore remains inaccessible directly from the browser.
+The browser verifies an entered token through `/api/auth`, retains it in `localStorage` until the
+user clicks **Lock** or clears site data, and sends it as a Bearer token to the API. Firestore remains
+inaccessible directly from the browser.
 
 Token files must stay outside the repository; matching filenames are also ignored defensively.
 Redeploy the Function after rotating the secret so the new secret version is attached.
