@@ -65,6 +65,7 @@ function daysBetween(date: string, referenceDate: string) {
 }
 
 function daysAwayLabel(daysAway: number) {
+  if (daysAway === 0) return "Today";
   return daysAway === 1 ? "Tomorrow" : `In ${daysAway} days`;
 }
 
@@ -294,9 +295,9 @@ export default function App() {
   function renderDeliverable(item: Deliverable, courseLong = false) {
     const countdownDate = officialDate(item) ?? item.sort_date;
     const daysAway = countdownDate ? daysBetween(countdownDate, today) : null;
-    const isUpcoming = daysAway !== null && daysAway > 0;
+    const isUpcoming = daysAway !== null && daysAway >= 0;
     const hasUrgencyColor = isUpcoming && daysAway <= 14 && item.type !== "lab";
-    const urgencyHue = hasUrgencyColor ? ((daysAway - 1) / 13) * 112 : undefined;
+    const urgencyHue = hasUrgencyColor ? ((Math.max(daysAway, 1) - 1) / 13) * 112 : undefined;
 
     return (
       <article
