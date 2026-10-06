@@ -1,10 +1,75 @@
 [
   {
     "type": "participation",
-    "name": "Attendance and Participation",
-    "sort_date": "2026-12-01",
+    "name": "Week 3: Attendance and Engagement Marks",
+    "due_date": "2026-09-22",
     "course_code": "NURS 180",
-    "worth_pct": 18
+    "points": 2,
+    "worth_pct": 2
+  },
+  {
+    "type": "participation",
+    "name": "Week 4: Attendance and Engagement Marks",
+    "due_date": "2026-09-29",
+    "course_code": "NURS 180",
+    "points": 2,
+    "worth_pct": 2
+  },
+  {
+    "type": "participation",
+    "name": "Week 6: Attendance and Engagement Marks",
+    "due_date": "2026-10-13",
+    "course_code": "NURS 180",
+    "points": 2,
+    "worth_pct": 2
+  },
+  {
+    "type": "participation",
+    "name": "Week 7: Attendance and Engagement Marks",
+    "due_date": "2026-10-20",
+    "course_code": "NURS 180",
+    "points": 2,
+    "worth_pct": 2
+  },
+  {
+    "type": "participation",
+    "name": "Week 8: Attendance and Engagement Marks",
+    "due_date": "2026-10-27",
+    "course_code": "NURS 180",
+    "points": 2,
+    "worth_pct": 2
+  },
+  {
+    "type": "participation",
+    "name": "Week 9: Attendance and Engagement Marks",
+    "due_date": "2026-11-03",
+    "course_code": "NURS 180",
+    "points": 2,
+    "worth_pct": 2
+  },
+  {
+    "type": "participation",
+    "name": "Week 11: Attendance and Engagement Marks",
+    "due_date": "2026-11-17",
+    "course_code": "NURS 180",
+    "points": 2,
+    "worth_pct": 2
+  },
+  {
+    "type": "participation",
+    "name": "Week 12: Attendance and Engagement Marks",
+    "due_date": "2026-11-24",
+    "course_code": "NURS 180",
+    "points": 2,
+    "worth_pct": 2
+  },
+  {
+    "type": "participation",
+    "name": "Week 13: Attendance and Engagement Marks",
+    "due_date": "2026-12-01",
+    "course_code": "NURS 180",
+    "points": 2,
+    "worth_pct": 2
   },
   {
     "type": "assignment",
@@ -68,10 +133,10 @@
   {
     "type": "assignment",
     "name": "Self-Care Strategy Paper",
-    "start_date": null,
-    "due_date": null,
-    "sort_date": "2026-11-08",
+    "start_date": "2026-09-22",
+    "due_date": "2026-10-18",
     "course_code": "NURS 180",
+    "points": 20,
     "worth_pct": 20
   },
   {

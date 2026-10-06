@@ -188,7 +188,7 @@ function createCourseTrackerMcpServer() {
     {
       title: "List upcoming assessments",
       description:
-        "List incomplete non-participation assessments in an upcoming date window.",
+        "List incomplete dated assessments, including scheduled participation, in an upcoming date window.",
       inputSchema: {
         start_date: z.string().regex(DATE_PATTERN).optional(),
         days: z.number().int().min(1).max(90).default(7),
@@ -200,7 +200,7 @@ function createCourseTrackerMcpServer() {
       const fromDate = start_date ?? todayInCourseTimeZone();
       const toDate = addDays(fromDate, days - 1);
       const assessments = (await loadAssessments())
-        .filter((item) => !item.completed && item.type !== "participation")
+        .filter((item) => !item.completed && (item.type !== "participation" || item.due_date || item.date))
         .filter((item) => !course_code || item.course_code === course_code)
         .filter((item) => {
           const date = effectiveDate(item);

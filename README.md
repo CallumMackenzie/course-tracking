@@ -12,8 +12,8 @@ changes. Stable document IDs preserve completion state across deploys. Direct br
 Firestore is denied; the client uses the `/api` Hosting rewrite.
 
 Items whose official date is still TBD may include a `sort_date`. This controls their estimated
-timeline position without replacing the official `null` date. Participation items remain in the
-bottom **Course-long** subsection.
+timeline position without replacing the official `null` date. Undated participation items remain in
+the bottom **Course-long** subsection; dated participation appears in the timeline.
 
 ## Firebase setup
 

@@ -251,9 +251,11 @@ export default function App() {
   }, [deliverables, typeFilter, courseFilter]);
 
   const timelineItems = visible.filter(
-    (item) => item.type !== "participation" && !item.completed
+    (item) => !item.completed && (item.type !== "participation" || officialDate(item))
   );
-  const courseLongItems = visible.filter((item) => item.type === "participation");
+  const courseLongItems = visible.filter(
+    (item) => item.type === "participation" && !officialDate(item)
+  );
   const completedItems = visible.filter(
     (item) => item.type !== "participation" && item.completed
   );
