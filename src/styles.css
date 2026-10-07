@@ -453,8 +453,8 @@ h1 {
 }
 
 .deliverable--soon {
-  border-bottom-color: hsl(var(--urgency-hue) 45% 86%);
-  background: hsl(var(--urgency-hue) 70% 95%);
+  border-bottom-color: hsl(var(--urgency-hue) 55% var(--urgency-border-lightness));
+  background: color-mix(in srgb, hsl(var(--urgency-hue) 85% 60%) var(--urgency-tint), white);
 }
 
 .deliverable::before {

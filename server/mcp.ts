@@ -3,6 +3,7 @@ import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { StreamableHTTPServerTransport } from "@modelcontextprotocol/sdk/server/streamableHttp.js";
 import * as z from "zod/v4";
 import { loadCourseContent } from "./course-content.js";
+import { isCompleted, todayInCourseTimeZone } from "./completion.js";
 import { courseLinks, type CourseFile } from "./courses.js";
 import { database } from "./db/database.js";
 import { importAssessmentData } from "./db/seed.js";
@@ -37,17 +38,6 @@ type Assessment = {
   completed: boolean;
 };
 
-function todayInCourseTimeZone() {
-  const parts = new Intl.DateTimeFormat("en-CA", {
-    timeZone: COURSE_TIME_ZONE,
-    year: "numeric",
-    month: "2-digit",
-    day: "2-digit"
-  }).formatToParts(new Date());
-  const values = Object.fromEntries(parts.map((part) => [part.type, part.value]));
-  return `${values.year}-${values.month}-${values.day}`;
-}
-
 function addDays(date: string, days: number) {
   const [year, month, day] = date.split("-").map(Number);
   const value = new Date(Date.UTC(year, month - 1, day + days));
@@ -74,7 +64,7 @@ function serializeAssessment(id: string, data: FirebaseFirestore.DocumentData): 
     course_code: data.course_code,
     ...courseLinks(data.course_code),
     worth_pct: data.worth_pct,
-    completed: data.completed ?? false
+    completed: isCompleted(data)
   };
 }
 

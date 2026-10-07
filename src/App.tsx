@@ -31,11 +31,15 @@ const COURSE_COLORS: Record<string, string> = {
   "NURS 180": "#aa4b8f"
 };
 
-function localDateKey(date = new Date()) {
-  const year = date.getFullYear();
-  const month = String(date.getMonth() + 1).padStart(2, "0");
-  const day = String(date.getDate()).padStart(2, "0");
-  return `${year}-${month}-${day}`;
+function courseDateKey(date = new Date()) {
+  const parts = new Intl.DateTimeFormat("en-CA", {
+    timeZone: "America/Vancouver",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit"
+  }).formatToParts(date);
+  const values = Object.fromEntries(parts.map((part) => [part.type, part.value]));
+  return `${values.year}-${values.month}-${values.day}`;
 }
 
 function effectiveDate(item: Deliverable) {
@@ -44,6 +48,14 @@ function effectiveDate(item: Deliverable) {
 
 function officialDate(item: Deliverable) {
   return item.due_date ?? item.date;
+}
+
+function isComplete(item: Deliverable, today: string) {
+  if (item.type === "participation") {
+    const date = officialDate(item);
+    return date !== null && date < today;
+  }
+  return item.completed;
 }
 
 function formatDate(value: string | null) {
@@ -67,6 +79,11 @@ function daysBetween(date: string, referenceDate: string) {
 function daysAwayLabel(daysAway: number) {
   if (daysAway === 0) return "Today";
   return daysAway === 1 ? "Tomorrow" : `In ${daysAway} days`;
+}
+
+function urgencyIntensity(weight: number) {
+  // A visible floor for small assessments, with diminishing returns above ~25%.
+  return 0.3 + 0.7 * (1 - Math.exp(-Math.max(0, weight) / 7));
 }
 
 function formatLongDate(value: string) {
@@ -122,7 +139,13 @@ export default function App() {
   const [error, setError] = useState("");
   const [contentError, setContentError] = useState("");
   const [updatingId, setUpdatingId] = useState<string | null>(null);
-  const today = localDateKey();
+  const [today, setToday] = useState(courseDateKey);
+
+  useEffect(() => {
+    // Keep dated participation current even if the tracker stays open overnight.
+    const timer = window.setInterval(() => setToday(courseDateKey()), 60_000);
+    return () => window.clearInterval(timer);
+  }, []);
 
   useEffect(() => {
     const persistentToken = window.localStorage.getItem(ACCESS_TOKEN_STORAGE_KEY);
@@ -251,13 +274,13 @@ export default function App() {
   }, [deliverables, typeFilter, courseFilter]);
 
   const timelineItems = visible.filter(
-    (item) => !item.completed && (item.type !== "participation" || officialDate(item))
+    (item) => !isComplete(item, today) && (item.type !== "participation" || officialDate(item))
   );
   const courseLongItems = visible.filter(
     (item) => item.type === "participation" && !officialDate(item)
   );
   const completedItems = visible.filter(
-    (item) => item.type !== "participation" && item.completed
+    (item) => isComplete(item, today) && (item.type !== "participation" || officialDate(item))
   );
 
   const todayIndex = timelineItems.findIndex((item) => {
@@ -295,18 +318,24 @@ export default function App() {
   }
 
   function renderDeliverable(item: Deliverable, courseLong = false) {
+    const completed = isComplete(item, today);
     const countdownDate = officialDate(item) ?? item.sort_date;
     const daysAway = countdownDate ? daysBetween(countdownDate, today) : null;
     const isUpcoming = daysAway !== null && daysAway >= 0;
-    const hasUrgencyColor = isUpcoming && daysAway <= 14 && item.type !== "lab";
+    const hasUrgencyColor = !completed && isUpcoming && daysAway <= 14 && item.type !== "lab";
     const urgencyHue = hasUrgencyColor ? ((Math.max(daysAway, 1) - 1) / 13) * 112 : undefined;
+    const intensity = urgencyIntensity(item.worth_pct);
 
     return (
       <article
-        className={`deliverable ${courseLong ? "deliverable--course-long" : ""} ${item.completed ? "deliverable--completed" : ""} ${hasUrgencyColor ? "deliverable--soon" : ""}`}
+        className={`deliverable ${courseLong ? "deliverable--course-long" : ""} ${completed ? "deliverable--completed" : ""} ${hasUrgencyColor ? "deliverable--soon" : ""}`}
         style={{
           "--course-color": COURSE_COLORS[item.course_code] ?? "#64748b",
-          ...(hasUrgencyColor ? { "--urgency-hue": urgencyHue } : {})
+          ...(hasUrgencyColor ? {
+            "--urgency-hue": urgencyHue,
+            "--urgency-tint": `${10 + 35 * intensity}%`,
+            "--urgency-border-lightness": `${94 - 20 * intensity}%`
+          } : {})
         } as React.CSSProperties}
       >
         <div className="date-column">
@@ -355,7 +384,7 @@ export default function App() {
 
         <div className="completion-column">
           {item.type === "participation" ? (
-            <span className="auto-label">Tracked in class</span>
+            <span className="auto-label">{completed ? "Done · tracked in class" : "Tracked in class"}</span>
           ) : (
             <label className="check-control">
               <input

@@ -1,6 +1,7 @@
 import express from "express";
 import { FieldValue } from "firebase-admin/firestore";
 import { requireAccessToken, requireMcpAccessToken } from "./auth.js";
+import { isCompleted, todayInCourseTimeZone } from "./completion.js";
 import { loadCourseContent } from "./course-content.js";
 import { database } from "./db/database.js";
 import { importAssessmentData } from "./db/seed.js";
@@ -45,7 +46,11 @@ app.get("/api/deliverables", async (_request, response) => {
   try {
     await importAssessmentData();
     const snapshot = await database.collection("deliverables").get();
-    response.json(snapshot.docs.map((document) => ({ id: document.id, ...document.data() })));
+    const today = todayInCourseTimeZone();
+    response.json(snapshot.docs.map((document) => {
+      const data = document.data();
+      return { id: document.id, ...data, completed: isCompleted(data, today) };
+    }));
   } catch (error) {
     console.error(error);
     response.status(500).json({ error: "Unable to load deliverables." });
