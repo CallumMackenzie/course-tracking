@@ -322,7 +322,7 @@ export default function App() {
     const countdownDate = officialDate(item) ?? item.sort_date;
     const daysAway = countdownDate ? daysBetween(countdownDate, today) : null;
     const isUpcoming = daysAway !== null && daysAway >= 0;
-    const hasUrgencyColor = !completed && isUpcoming && daysAway <= 14 && item.type !== "lab";
+    const hasUrgencyColor = !completed && isUpcoming && daysAway <= 14 && item.type !== "lab" && item.type !== "participation";
     const urgencyHue = hasUrgencyColor ? ((Math.max(daysAway, 1) - 1) / 13) * 112 : undefined;
     const intensity = urgencyIntensity(item.worth_pct);
 
