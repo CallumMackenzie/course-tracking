@@ -23,8 +23,7 @@
   {
     "type": "final",
     "name": "Final Exam",
-    "date": null,
-    "sort_date": "2026-12-16",
+    "date": "2026-12-19",
     "course_code": "STAT 305",
     "worth_pct": 40
   },

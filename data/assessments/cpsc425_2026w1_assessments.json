@@ -95,8 +95,7 @@
   {
     "type": "final",
     "name": "Final Exam",
-    "date": null,
-    "sort_date": "2026-12-19",
+    "date": "2026-12-11",
     "course_code": "CPSC 425",
     "worth_pct": 40
   }

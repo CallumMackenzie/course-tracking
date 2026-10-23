@@ -58,8 +58,7 @@
   {
     "type": "final",
     "name": "Final Exam",
-    "date": null,
-    "sort_date": "2026-12-18",
+    "date": "2026-12-22",
     "course_code": "CPSC 340",
     "worth_pct": 50
   }

@@ -8,6 +8,19 @@ function data(course, kind) {
 
 const assessment = (course, name) => data(course, "assessments").find((item) => item.name === name);
 
+test("confirmed final exam dates replace estimated timeline dates", () => {
+  for (const [course, date] of [
+    ["stat406", "2026-12-11"],
+    ["cpsc425", "2026-12-11"],
+    ["stat305", "2026-12-19"],
+    ["cpsc340", "2026-12-22"]
+  ]) {
+    const final = assessment(course, "Final Exam");
+    assert.equal(final.date, date);
+    assert.equal(final.sort_date, undefined);
+  }
+});
+
 test("CPSC 425 schedule includes the midterm, quizzes and published slides", () => {
   const content = data("cpsc425", "course-content");
   assert.equal(content.find((item) => item.date === "2026-10-22")?.title, "Midterm Exam (in class)");
