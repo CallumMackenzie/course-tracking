@@ -15,7 +15,10 @@ Items whose official date is still TBD may include a `sort_date`. This controls 
 timeline position without replacing the official `null` date. Undated participation items remain in
 the bottom **Course-long** subsection; dated participation appears in the timeline and moves to
 **Completed** after its scheduled day ends in Vancouver. This is a time-based status, not
-confirmation of attendance.
+confirmation of attendance. Individual weights marked `~` are estimates when only an aggregate
+course weight is published (for example, CPSC 425 quizzes and two NURS 180 engagement tasks).
+STAT 406 homework, labs, and clickers award up to 68 available points but are capped at 58
+points combined; their individual figures are points, not additive percentages of the final grade.
 
 ## Firebase setup
 

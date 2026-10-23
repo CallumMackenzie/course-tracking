@@ -57,11 +57,33 @@
   },
   {
     "type": "quiz",
-    "name": "Quizzes",
-    "date": null,
-    "sort_date": "2026-12-03",
+    "name": "Quiz 1",
+    "date": "2026-09-24",
     "course_code": "CPSC 425",
-    "worth_pct": 10
+    "worth_pct": 3.3333333333333335,
+    "worth_pct_estimated": true,
+    "grading_group": "Quizzes",
+    "grading_group_worth_pct": 10
+  },
+  {
+    "type": "quiz",
+    "name": "Quiz 2",
+    "date": "2026-10-06",
+    "course_code": "CPSC 425",
+    "worth_pct": 3.3333333333333335,
+    "worth_pct_estimated": true,
+    "grading_group": "Quizzes",
+    "grading_group_worth_pct": 10
+  },
+  {
+    "type": "quiz",
+    "name": "Quiz 3",
+    "date": "2026-10-20",
+    "course_code": "CPSC 425",
+    "worth_pct": 3.333333333333333,
+    "worth_pct_estimated": true,
+    "grading_group": "Quizzes",
+    "grading_group_worth_pct": 10
   },
   {
     "type": "test",

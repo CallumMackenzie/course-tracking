@@ -51,7 +51,7 @@
   {
     "course_code": "CPSC 340",
     "date": "2026-09-25",
-    "title": "Clustering",
+    "title": "Random Forests (contd.) + Clustering",
     "readings": ["IDM 8.1-8.2", "ESL 14.3"],
     "links": ["https://www.students.cs.ubc.ca/~cs-340/slides/L8.pdf", "https://en.wikipedia.org/wiki/Cluster_analysis", "https://en.wikipedia.org/wiki/K-means_clustering", "https://www.naftaliharris.com/blog/visualizing-k-means-clustering/", "http://ilpubs.stanford.edu:8090/778/1/2006-13.pdf", "https://www.youtube.com/watch?v=BIQDlmZDuf8"]
   },

@@ -61,7 +61,7 @@
   {
     "type": "lab",
     "name": "Lab 4 — ML for geometric distributions",
-    "date": "2026-10-12",
+    "date": "2026-10-14",
     "course_code": "STAT 305",
     "worth_pct": 0.5555555555555556,
     "points": 1,
@@ -71,7 +71,7 @@
   {
     "type": "lab",
     "name": "Lab 5 — More MLE",
-    "date": "2026-10-19",
+    "date": "2026-10-21",
     "course_code": "STAT 305",
     "worth_pct": 0.5555555555555556,
     "points": 1,
@@ -81,7 +81,7 @@
   {
     "type": "lab",
     "name": "Lab 6 — Bayes: exponential distribution",
-    "date": "2026-10-26",
+    "date": "2026-10-28",
     "course_code": "STAT 305",
     "worth_pct": 0.5555555555555556,
     "points": 1,
@@ -91,7 +91,7 @@
   {
     "type": "lab",
     "name": "Lab 7 — Hypothesis tests: formulation",
-    "date": "2026-11-02",
+    "date": "2026-11-04",
     "course_code": "STAT 305",
     "worth_pct": 0.5555555555555556,
     "points": 1,

@@ -26,9 +26,8 @@
   {
     "type": "assignment",
     "name": "Assignment 4",
-    "start_date": "2026-10-23",
-    "due_date": null,
-    "sort_date": "2026-11-06",
+    "start_date": "2026-10-21",
+    "due_date": "2026-11-04",
     "course_code": "CPSC 340",
     "worth_pct": 5
   },

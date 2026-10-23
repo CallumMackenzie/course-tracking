@@ -1,0 +1,50 @@
+import assert from "node:assert/strict";
+import { readFileSync } from "node:fs";
+import { test } from "node:test";
+
+function data(course, kind) {
+  return JSON.parse(readFileSync(new URL(`../data/${kind}/${course}_2026w1_${kind === "assessments" ? "assessments" : "content"}.json`, import.meta.url), "utf8"));
+}
+
+const assessment = (course, name) => data(course, "assessments").find((item) => item.name === name);
+
+test("CPSC 425 schedule includes the midterm, quizzes and published slides", () => {
+  const content = data("cpsc425", "course-content");
+  assert.equal(content.find((item) => item.date === "2026-10-22")?.title, "Midterm Exam (in class)");
+  for (const date of ["2026-09-24", "2026-10-06", "2026-10-20"]) {
+    assert.match(content.find((item) => item.date === date)?.title ?? "", /Quiz [123]/);
+  }
+  for (let lecture = 1; lecture <= 12; lecture++) {
+    assert.ok(content.some((item) => item.links.some((url) => url.endsWith(`/Lecture${lecture}.pdf`))));
+  }
+  const quizzes = data("cpsc425", "assessments").filter((item) => item.type === "quiz");
+  assert.deepEqual(quizzes.map((item) => item.date), ["2026-09-24", "2026-10-06", "2026-10-20"]);
+  assert.ok(quizzes.every((item) => item.worth_pct_estimated && item.grading_group_worth_pct === 10));
+  assert.equal(quizzes.reduce((sum, item) => sum + item.worth_pct, 0), 10);
+});
+
+test("CPSC 340 Assignment 4 uses published availability and due dates", () => {
+  assert.equal(assessment("cpsc340", "Assignment 4").start_date, "2026-10-21");
+  assert.equal(assessment("cpsc340", "Assignment 4").due_date, "2026-11-04");
+});
+
+test("STAT 305 labs avoid Thanksgiving and follow the first scheduled lab day", () => {
+  for (const [number, date] of [[4, "2026-10-14"], [5, "2026-10-21"], [6, "2026-10-28"], [7, "2026-11-04"]]) {
+    assert.equal(data("stat305", "assessments").find((item) => item.name.startsWith(`Lab ${number} —`))?.date, date);
+  }
+});
+
+test("STAT 406 effort points are capped and lab deadlines remain unconfirmed", () => {
+  const items = data("stat406", "assessments");
+  const effort = items.filter((item) => ["assignment", "lab", "participation"].includes(item.type));
+  assert.equal(effort.reduce((sum, item) => sum + item.worth_pct, 0), 68);
+  assert.ok(effort.every((item) => item.grading_group_worth_pct === 58));
+  assert.ok(items.filter((item) => item.type === "lab").every((item) => !item.due_date && item.sort_date));
+});
+
+test("NURS 180 Digital Detox has a confirmed date and provisional share of engagement marks", () => {
+  const item = assessment("nurs180", "Week 8 Digital Detox Assignment");
+  assert.equal(item.due_date, "2026-11-03");
+  assert.equal(item.worth_pct_estimated, true);
+  assert.equal(assessment("nurs180", "Other Weekly Engagement Activity (date TBD)").worth_pct_estimated, true);
+});

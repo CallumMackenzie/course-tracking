@@ -374,9 +374,15 @@ export default function App() {
               "Scheduled lab"
             ) : (
               <>
-                {item.worth_pct_estimated && "~"}{formatPercent(item.worth_pct)}% of course grade
-                {item.points != null && ` · ${item.points} pts`}
-                {item.grading_group && ` · ${item.grading_group}`}
+                {item.grading_group?.startsWith("Effort pool (capped") ? (
+                  <>{formatPercent(item.worth_pct)} available points · {item.grading_group}</>
+                ) : (
+                  <>
+                    {item.worth_pct_estimated && "~"}{formatPercent(item.worth_pct)}% of course grade
+                    {item.points != null && ` · ${item.points} pts`}
+                    {item.grading_group && ` · ${item.grading_group}`}
+                  </>
+                )}
               </>
             )}
           </p>

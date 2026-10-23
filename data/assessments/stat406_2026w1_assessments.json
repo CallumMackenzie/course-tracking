@@ -5,7 +5,9 @@
     "start_date": null,
     "due_date": "2026-09-26",
     "course_code": "STAT 406",
-    "worth_pct": 10
+    "worth_pct": 10,
+    "grading_group": "Effort pool (capped at 58 points total)",
+    "grading_group_worth_pct": 58
   },
   {
     "type": "assignment",
@@ -13,7 +15,9 @@
     "start_date": null,
     "due_date": "2026-10-10",
     "course_code": "STAT 406",
-    "worth_pct": 10
+    "worth_pct": 10,
+    "grading_group": "Effort pool (capped at 58 points total)",
+    "grading_group_worth_pct": 58
   },
   {
     "type": "assignment",
@@ -21,7 +25,9 @@
     "start_date": null,
     "due_date": "2026-11-07",
     "course_code": "STAT 406",
-    "worth_pct": 10
+    "worth_pct": 10,
+    "grading_group": "Effort pool (capped at 58 points total)",
+    "grading_group_worth_pct": 58
   },
   {
     "type": "assignment",
@@ -29,86 +35,108 @@
     "start_date": null,
     "due_date": "2026-11-28",
     "course_code": "STAT 406",
-    "worth_pct": 10
+    "worth_pct": 10,
+    "grading_group": "Effort pool (capped at 58 points total)",
+    "grading_group_worth_pct": 58
   },
   {
     "type": "lab",
     "name": "Lab 00",
     "start_date": "2026-09-14",
-    "due_date": "2026-09-18",
     "course_code": "STAT 406",
-    "worth_pct": 2
+    "worth_pct": 2,
+    "grading_group": "Effort pool (capped at 58 points total)",
+    "grading_group_worth_pct": 58,
+    "sort_date": "2026-09-18"
   },
   {
     "type": "lab",
     "name": "Lab 01",
     "start_date": "2026-09-21",
-    "due_date": "2026-09-25",
     "course_code": "STAT 406",
-    "worth_pct": 2
+    "worth_pct": 2,
+    "grading_group": "Effort pool (capped at 58 points total)",
+    "grading_group_worth_pct": 58,
+    "sort_date": "2026-09-25"
   },
   {
     "type": "lab",
     "name": "Lab 02",
     "start_date": "2026-09-28",
-    "due_date": "2026-10-02",
     "course_code": "STAT 406",
-    "worth_pct": 2
+    "worth_pct": 2,
+    "grading_group": "Effort pool (capped at 58 points total)",
+    "grading_group_worth_pct": 58,
+    "sort_date": "2026-10-02"
   },
   {
     "type": "lab",
     "name": "Lab 03",
     "start_date": "2026-10-05",
-    "due_date": "2026-10-09",
     "course_code": "STAT 406",
-    "worth_pct": 2
+    "worth_pct": 2,
+    "grading_group": "Effort pool (capped at 58 points total)",
+    "grading_group_worth_pct": 58,
+    "sort_date": "2026-10-09"
   },
   {
     "type": "lab",
     "name": "Lab 04",
     "start_date": "2026-10-12",
-    "due_date": "2026-10-16",
     "course_code": "STAT 406",
-    "worth_pct": 2
+    "worth_pct": 2,
+    "grading_group": "Effort pool (capped at 58 points total)",
+    "grading_group_worth_pct": 58,
+    "sort_date": "2026-10-16"
   },
   {
     "type": "lab",
     "name": "Lab 05",
     "start_date": "2026-10-26",
-    "due_date": "2026-10-30",
     "course_code": "STAT 406",
-    "worth_pct": 2
+    "worth_pct": 2,
+    "grading_group": "Effort pool (capped at 58 points total)",
+    "grading_group_worth_pct": 58,
+    "sort_date": "2026-10-30"
   },
   {
     "type": "lab",
     "name": "Lab 07",
     "start_date": "2026-11-02",
-    "due_date": "2026-11-06",
     "course_code": "STAT 406",
-    "worth_pct": 2
+    "worth_pct": 2,
+    "grading_group": "Effort pool (capped at 58 points total)",
+    "grading_group_worth_pct": 58,
+    "sort_date": "2026-11-06"
   },
   {
     "type": "lab",
     "name": "Lab 08",
     "start_date": "2026-11-16",
-    "due_date": "2026-11-20",
     "course_code": "STAT 406",
-    "worth_pct": 2
+    "worth_pct": 2,
+    "grading_group": "Effort pool (capped at 58 points total)",
+    "grading_group_worth_pct": 58,
+    "sort_date": "2026-11-20"
   },
   {
     "type": "lab",
     "name": "Lab 09",
     "start_date": "2026-11-23",
-    "due_date": "2026-11-27",
     "course_code": "STAT 406",
-    "worth_pct": 2
+    "worth_pct": 2,
+    "grading_group": "Effort pool (capped at 58 points total)",
+    "grading_group_worth_pct": 58,
+    "sort_date": "2026-11-27"
   },
   {
     "type": "participation",
     "name": "Clicker Points",
     "sort_date": "2026-12-02",
     "course_code": "STAT 406",
-    "worth_pct": 10
+    "worth_pct": 10,
+    "grading_group": "Effort pool (capped at 58 points total)",
+    "grading_group_worth_pct": 58
   },
   {
     "type": "test",

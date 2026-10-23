@@ -97,12 +97,21 @@
   },
   {
     "type": "assignment",
-    "name": "Other Weekly Engagement Activities (2)",
+    "name": "Week 8 Digital Detox Assignment",
+    "start_date": null,
+    "due_date": "2026-11-03",
+    "course_code": "NURS 180",
+    "worth_pct": 6,
+    "worth_pct_estimated": true
+  },
+  {
+    "type": "assignment",
+    "name": "Other Weekly Engagement Activity (date TBD)",
     "start_date": null,
     "due_date": null,
-    "sort_date": "2026-11-05",
     "course_code": "NURS 180",
-    "worth_pct": 12
+    "worth_pct": 6,
+    "worth_pct_estimated": true
   },
   {
     "type": "assignment",

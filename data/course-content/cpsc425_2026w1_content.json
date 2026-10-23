@@ -16,7 +16,7 @@
       "Szeliski 2.2",
       "Lecture Notes: Image Formation"
     ],
-    "links": []
+    "links": ["https://www.cs.ubc.ca/~aerion1/425_2026W1/Lecture2.pdf", "https://www.cs.ubc.ca/~aerion1/425_2026W1/LectureNotes1.pdf"]
   },
   {
     "course_code": "CPSC 425",
@@ -25,7 +25,7 @@
     "readings": [
       "Szeliski 3.1-3.2"
     ],
-    "links": []
+    "links": ["https://www.cs.ubc.ca/~aerion1/425_2026W1/Lecture3.pdf"]
   },
   {
     "course_code": "CPSC 425",
@@ -34,17 +34,17 @@
     "readings": [
       "Szeliski 3.2"
     ],
-    "links": []
+    "links": ["https://www.cs.ubc.ca/~aerion1/425_2026W1/Lecture4.pdf"]
   },
   {
     "course_code": "CPSC 425",
     "date": "2026-09-24",
-    "title": "Image Filtering 3: Speeding up convolution, high and low-pass, non-linear filters",
+    "title": "Image Filtering 3: Speeding up convolution, high and low-pass, non-linear filters; Quiz 1",
     "readings": [
       "Szeliski 3.3",
       "Lecture Notes: Image Filtering"
     ],
-    "links": []
+    "links": ["https://www.cs.ubc.ca/~aerion1/425_2026W1/Lecture5.pdf", "https://www.cs.ubc.ca/~aerion1/425_2026W1/LectureNotes2.pdf"]
   },
   {
     "course_code": "CPSC 425",
@@ -54,7 +54,7 @@
       "Szeliski 2.3",
       "Lecture Notes: FFT, Sampling"
     ],
-    "links": []
+    "links": ["https://www.cs.ubc.ca/~aerion1/425_2026W1/Lecture6.pdf", "https://www.cs.ubc.ca/~aerion1/425_2026W1/LectureNotes3.pdf"]
   },
   {
     "course_code": "CPSC 425",
@@ -63,16 +63,16 @@
     "readings": [
       "Szeliski 9.1"
     ],
-    "links": []
+    "links": ["https://www.cs.ubc.ca/~aerion1/425_2026W1/Lecture7.pdf"]
   },
   {
     "course_code": "CPSC 425",
     "date": "2026-10-06",
-    "title": "Scaled Representations 2: Pyramids, blending, multi-scale matching",
+    "title": "Scaled Representations 2: Pyramids, blending, multi-scale matching; Quiz 2",
     "readings": [
       "Szeliski 3.5"
     ],
-    "links": []
+    "links": ["https://www.cs.ubc.ca/~aerion1/425_2026W1/Lecture8.pdf"]
   },
   {
     "course_code": "CPSC 425",
@@ -81,7 +81,7 @@
     "readings": [
       "Szeliski 7.2"
     ],
-    "links": []
+    "links": ["https://www.cs.ubc.ca/~aerion1/425_2026W1/Lecture9.pdf"]
   },
   {
     "course_code": "CPSC 425",
@@ -91,7 +91,7 @@
       "Szeliski 7.1",
       "Lecture Notes: Derivatives, Edge Detection, Corners and Blobs"
     ],
-    "links": []
+    "links": ["https://www.cs.ubc.ca/~aerion1/425_2026W1/Lecture10.pdf", "https://www.cs.ubc.ca/~aerion1/425_2026W1/LectureNotes4.pdf"]
   },
   {
     "course_code": "CPSC 425",
@@ -100,12 +100,19 @@
     "readings": [
       "Szeliski 10.5"
     ],
-    "links": []
+    "links": ["https://www.cs.ubc.ca/~aerion1/425_2026W1/Lecture11.pdf"]
   },
   {
     "course_code": "CPSC 425",
     "date": "2026-10-20",
-    "title": "Texture 2: Analysis, textons, filter banks and Midterm Review: Q&A",
+    "title": "Texture 2: Analysis, textons, filter banks; Quiz 3 and Midterm Review",
+    "readings": [],
+    "links": ["https://www.cs.ubc.ca/~aerion1/425_2026W1/Lecture12.pdf"]
+  },
+  {
+    "course_code": "CPSC 425",
+    "date": "2026-10-22",
+    "title": "Midterm Exam (in class)",
     "readings": [],
     "links": []
   },
