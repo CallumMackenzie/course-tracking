@@ -47,7 +47,7 @@
     "worth_pct": 2,
     "grading_group": "Effort pool (capped at 58 points total)",
     "grading_group_worth_pct": 58,
-    "sort_date": "2026-09-18"
+    "due_date": "2026-09-19"
   },
   {
     "type": "lab",
@@ -57,7 +57,7 @@
     "worth_pct": 2,
     "grading_group": "Effort pool (capped at 58 points total)",
     "grading_group_worth_pct": 58,
-    "sort_date": "2026-09-25"
+    "due_date": "2026-09-26"
   },
   {
     "type": "lab",
@@ -67,7 +67,7 @@
     "worth_pct": 2,
     "grading_group": "Effort pool (capped at 58 points total)",
     "grading_group_worth_pct": 58,
-    "sort_date": "2026-10-02"
+    "due_date": "2026-10-03"
   },
   {
     "type": "lab",
@@ -77,7 +77,7 @@
     "worth_pct": 2,
     "grading_group": "Effort pool (capped at 58 points total)",
     "grading_group_worth_pct": 58,
-    "sort_date": "2026-10-09"
+    "due_date": "2026-10-10"
   },
   {
     "type": "lab",
@@ -87,7 +87,7 @@
     "worth_pct": 2,
     "grading_group": "Effort pool (capped at 58 points total)",
     "grading_group_worth_pct": 58,
-    "sort_date": "2026-10-16"
+    "due_date": "2026-10-17"
   },
   {
     "type": "lab",
@@ -97,7 +97,7 @@
     "worth_pct": 2,
     "grading_group": "Effort pool (capped at 58 points total)",
     "grading_group_worth_pct": 58,
-    "sort_date": "2026-10-30"
+    "due_date": "2026-10-31"
   },
   {
     "type": "lab",
@@ -107,7 +107,7 @@
     "worth_pct": 2,
     "grading_group": "Effort pool (capped at 58 points total)",
     "grading_group_worth_pct": 58,
-    "sort_date": "2026-11-06"
+    "due_date": "2026-11-07"
   },
   {
     "type": "lab",
@@ -117,7 +117,7 @@
     "worth_pct": 2,
     "grading_group": "Effort pool (capped at 58 points total)",
     "grading_group_worth_pct": 58,
-    "sort_date": "2026-11-20"
+    "due_date": "2026-11-21"
   },
   {
     "type": "lab",
@@ -127,7 +127,7 @@
     "worth_pct": 2,
     "grading_group": "Effort pool (capped at 58 points total)",
     "grading_group_worth_pct": 58,
-    "sort_date": "2026-11-27"
+    "due_date": "2026-11-28"
   },
   {
     "type": "participation",
