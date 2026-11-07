@@ -11,6 +11,7 @@ export type Deliverable = {
   type: DeliverableType;
   name: string;
   date: string | null;
+  start_time: string | null;
   start_date: string | null;
   due_date: string | null;
   sort_date: string | null;

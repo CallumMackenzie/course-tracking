@@ -122,28 +122,28 @@
     "course_code": "STAT 305",
     "date": "2026-10-19",
     "title": "Bayes' Rule",
-    "readings": ["Worksheet 6.1", "Course notes (old) 6.1, 6.2", "RICE (3rd edition) 8.6"],
+    "readings": ["Worksheet 6.1", "Course notes (old) 6.1, 6.2", "Course notes (new) 6.1, 6.2", "RICE (3rd edition) 8.6"],
     "links": []
   },
   {
     "course_code": "STAT 305",
     "date": "2026-10-21",
     "title": "Bayes' Rule for a continuous parameter",
-    "readings": ["Worksheet 6.2", "Course notes (old) 6.3", "RICE (3rd edition) 8.6"],
+    "readings": ["Worksheet 6.2", "Course notes (old) 6.3", "Course notes (new) 6.3", "RICE (3rd edition) 8.6"],
     "links": []
   },
   {
     "course_code": "STAT 305",
     "date": "2026-10-23",
     "title": "Computing the posterior",
-    "readings": ["Worksheet 6.3", "Course notes (old) 6.4"],
+    "readings": ["Worksheet 6.3", "Course notes (old) 6.3-6.4", "Course notes (new) 6.3-6.5"],
     "links": []
   },
   {
     "course_code": "STAT 305",
     "date": "2026-10-26",
     "title": "Does the prior matter?",
-    "readings": ["Worksheet 6.4", "Course notes (old) 6.6"],
+    "readings": ["Worksheet 6.4", "Course notes (old) 6.6", "Course notes (new) 6.7"],
     "links": []
   },
   {
@@ -157,14 +157,14 @@
     "course_code": "STAT 305",
     "date": "2026-10-30",
     "title": "Hypothesis tests",
-    "readings": ["Worksheet 7.1", "Course notes (old) 7.1-7.2", "RICE (3rd edition) 9.1"],
+    "readings": ["Worksheet 7.1", "Course notes (old) 7.1-7.2", "Course notes (new) 7.1-7.2", "RICE (3rd edition) 9.1"],
     "links": []
   },
   {
     "course_code": "STAT 305",
     "date": "2026-11-02",
     "title": "Hypothesis tests - errors, significance level, power",
-    "readings": ["Worksheet 7.2", "Course notes (old) 7.3"],
+    "readings": ["Worksheet 7.2", "Course notes (old) 7.3", "Course notes (new) 7.3"],
     "links": []
   },
   {
@@ -199,14 +199,14 @@
     "course_code": "STAT 305",
     "date": "2026-11-13",
     "title": "Neyman-Pearson lemma and composite hypotheses",
-    "readings": ["Worksheet 7.4", "Course notes (old) 7.4", "RICE (3rd edition) 9.2"],
+    "readings": ["Worksheet 7.4", "Course notes (old) 7.4", "Course notes (new) 7.4", "RICE (3rd edition) 9.2"],
     "links": []
   },
   {
     "course_code": "STAT 305",
     "date": "2026-11-16",
     "title": "Generalized likelihood ratio tests",
-    "readings": ["Worksheet 7.5", "Course notes (old) 7.5"],
+    "readings": ["Worksheet 7.5", "Course notes (old) 7.5", "Course notes (new) 7.5"],
     "links": []
   },
   {
@@ -220,49 +220,49 @@
     "course_code": "STAT 305",
     "date": "2026-11-20",
     "title": "Normal distribution; p-values; connection with confidence intervals",
-    "readings": ["Worksheet 7.6", "Course notes (old) 7.6-7.9", "RICE (3rd edition) 9.3"],
+    "readings": ["Worksheet 7.6", "Course notes (old) 7.6-7.9", "Course notes (new) 7.6-7.9", "RICE (3rd edition) 9.3"],
     "links": []
   },
   {
     "course_code": "STAT 305",
     "date": "2026-11-23",
     "title": "Analysis of categorical data: multinomial distribution",
-    "readings": ["Worksheet 8.1", "Course notes (old) 8.1, 8.2", "RICE (3rd edition) 8.5.1"],
+    "readings": ["Worksheet 8.1", "Course notes (old) 8.1, 8.2", "Course notes (new) 8.1, 8.2", "RICE (3rd edition) 8.5.1"],
     "links": []
   },
   {
     "course_code": "STAT 305",
     "date": "2026-11-25",
     "title": "Hypothesis tests for the multinomial distribution",
-    "readings": ["Worksheet 8.2", "Course notes (old) 8.3", "RICE (3rd edition) 9.4"],
+    "readings": ["Worksheet 8.2", "Course notes (old) 8.3", "Course notes (new) 8.3", "RICE (3rd edition) 9.4"],
     "links": []
   },
   {
     "course_code": "STAT 305",
     "date": "2026-11-27",
     "title": "Comparing multinomial distributions; contingency tables",
-    "readings": ["Worksheet 9.2", "Course notes (old) 9.3, 9.4", "RICE (3rd edition) 13.3, 13.4"],
+    "readings": ["Worksheet 9.2", "Course notes (old) 9.3, 9.4", "Course notes (new) 9.3, 9.4", "RICE (3rd edition) 13.3, 13.4"],
     "links": []
   },
   {
     "course_code": "STAT 305",
     "date": "2026-11-30",
     "title": "Goodness of fit test",
-    "readings": ["Worksheet 8.3", "Course notes (old) 8.4", "RICE (3rd edition) 9.5"],
+    "readings": ["Worksheet 8.3", "Course notes (old) 8.4", "Course notes (new) 8.4", "RICE (3rd edition) 9.5"],
     "links": []
   },
   {
     "course_code": "STAT 305",
     "date": "2026-12-02",
     "title": "Comparing two independent samples",
-    "readings": ["Worksheet 9.1", "Course notes (old) 9.1, 9.2", "RICE (3rd edition) 11.2.1, 11.2.2"],
+    "readings": ["Worksheet 9.1", "Course notes (old) 9.1, 9.2", "Course notes (new) 9.1, 9.2", "RICE (3rd edition) 11.2.1, 11.2.2"],
     "links": []
   },
   {
     "course_code": "STAT 305",
     "date": "2026-12-04",
     "title": "Paired comparisons",
-    "readings": ["Worksheet 9.3", "Course notes (old) 9.5"],
+    "readings": ["Worksheet 9.3", "Course notes (old) 9.5", "Course notes (new) 9.5"],
     "links": []
   },
   {

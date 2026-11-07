@@ -67,6 +67,15 @@ function formatDate(value: string | null) {
   }).format(new Date(`${value}T12:00:00`));
 }
 
+function formatTime(value: string) {
+  return new Intl.DateTimeFormat("en-CA", {
+    hour: "numeric",
+    minute: "2-digit",
+    hour12: true,
+    timeZone: "UTC"
+  }).format(new Date(`2000-01-01T${value}:00Z`));
+}
+
 function daysBetween(date: string, referenceDate: string) {
   const toUtcDay = (value: string) => {
     const [year, month, day] = value.split("-").map(Number);
@@ -350,6 +359,9 @@ export default function App() {
             <span className="estimated-date">TBD · est. {formatDate(item.sort_date)}</span>
           ) : (
             <span>Date to be announced</span>
+          )}
+          {!courseLong && item.start_time && (
+            <small>Starts {formatTime(item.start_time)} (Vancouver)</small>
           )}
           {!courseLong && item.start_date && (
             <small>Opens {formatDate(item.start_date)}</small>

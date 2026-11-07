@@ -41,6 +41,25 @@ test("CPSC 340 Assignment 4 uses published availability and due dates", () => {
   assert.equal(assessment("cpsc340", "Assignment 4").due_date, "2026-11-04");
 });
 
+test("STAT 305 revised schedule readings and final exam time are recorded", () => {
+  const content = data("stat305", "course-content");
+  const newNotes = new Map([
+    ["2026-10-19", "6.1, 6.2"], ["2026-10-21", "6.3"],
+    ["2026-10-23", "6.3-6.5"], ["2026-10-26", "6.7"],
+    ["2026-10-30", "7.1-7.2"], ["2026-11-02", "7.3"],
+    ["2026-11-13", "7.4"], ["2026-11-16", "7.5"],
+    ["2026-11-20", "7.6-7.9"], ["2026-11-23", "8.1, 8.2"],
+    ["2026-11-25", "8.3"], ["2026-11-27", "9.3, 9.4"],
+    ["2026-11-30", "8.4"], ["2026-12-02", "9.1, 9.2"],
+    ["2026-12-04", "9.5"]
+  ]);
+  for (const [date, sections] of newNotes) {
+    assert.ok(content.find((item) => item.date === date)?.readings.includes(`Course notes (new) ${sections}`), date);
+  }
+  assert.ok(content.find((item) => item.date === "2026-10-23")?.readings.includes("Course notes (old) 6.3-6.4"));
+  assert.equal(assessment("stat305", "Final Exam").start_time, "12:00");
+});
+
 test("STAT 305 labs avoid Thanksgiving and follow the first scheduled lab day", () => {
   for (const [number, date] of [[4, "2026-10-14"], [5, "2026-10-21"], [6, "2026-10-28"], [7, "2026-11-04"]]) {
     assert.equal(data("stat305", "assessments").find((item) => item.name.startsWith(`Lab ${number} —`))?.date, date);

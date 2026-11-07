@@ -24,6 +24,7 @@
     "type": "final",
     "name": "Final Exam",
     "date": "2026-12-19",
+    "start_time": "12:00",
     "course_code": "STAT 305",
     "worth_pct": 40
   },

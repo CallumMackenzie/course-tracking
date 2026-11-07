@@ -9,6 +9,7 @@ type SeedDeliverable = {
   type: string;
   name: string;
   date?: string | null;
+  start_time?: string | null;
   start_date?: string | null;
   due_date?: string | null;
   sort_date?: string | null;
@@ -74,6 +75,7 @@ async function importAssessmentDataOnce() {
         type: item.type,
         name: item.name,
         date: item.date ?? null,
+        start_time: item.start_time ?? null,
         start_date: item.start_date ?? null,
         due_date: item.due_date ?? null,
         sort_date: item.sort_date ?? null,

@@ -24,6 +24,7 @@ type Assessment = {
   type: (typeof ASSESSMENT_TYPES)[number];
   name: string;
   date: string | null;
+  start_time: string | null;
   start_date: string | null;
   due_date: string | null;
   sort_date: string | null;
@@ -54,6 +55,7 @@ function serializeAssessment(id: string, data: FirebaseFirestore.DocumentData): 
     type: data.type,
     name: data.name,
     date: data.date ?? null,
+    start_time: data.start_time ?? null,
     start_date: data.start_date ?? null,
     due_date: data.due_date ?? null,
     sort_date: data.sort_date ?? null,
