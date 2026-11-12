@@ -26,6 +26,17 @@ test("NURS 180 attendance matches the nine dated Canvas entries", () => {
   assert.equal(attendance.reduce((total, item) => total + item.worth_pct, 0), 18);
 });
 
+test("NURS 180 discussion boards have separate original and response deadlines", () => {
+  const discussions = assessments.filter((item) => item.grading_group?.includes("discussion (6% total"));
+  assert.deepEqual(discussions.map((item) => [item.due_date, item.points, item.worth_pct]), [
+    ["2026-11-17", 3, 3.6], ["2026-11-19", 2, 2.4],
+    ["2026-11-24", 3, 3.6], ["2026-11-26", 2, 2.4]
+  ]);
+  assert.ok(discussions.every((item) => item.worth_pct_estimated));
+  assert.equal(assessments.find((item) => item.name === "Self-Care Creative Project")?.due_date, "2026-11-24");
+  assert.equal(assessments.find((item) => item.name === "Self-Care Creative Project")?.sort_date, undefined);
+});
+
 test("NURS 180 assessment weights total 100%", () => {
   assert.equal(assessments.reduce((total, item) => total + item.worth_pct, 0), 100);
 });

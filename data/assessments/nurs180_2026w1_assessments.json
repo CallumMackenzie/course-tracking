@@ -123,12 +123,47 @@
   },
   {
     "type": "assignment",
-    "name": "Other Discussion Posts and Responses (2)",
+    "name": "Week 9: Discussion Board - WOOP — Original Post (max 300 words; no AI)",
     "start_date": null,
-    "due_date": null,
-    "sort_date": "2026-11-19",
+    "due_date": "2026-11-17",
     "course_code": "NURS 180",
-    "worth_pct": 12
+    "points": 3,
+    "worth_pct": 3.6,
+    "worth_pct_estimated": true,
+    "grading_group": "WOOP discussion (6% total; 5 marks)"
+  },
+  {
+    "type": "assignment",
+    "name": "Week 9: Discussion Board - WOOP — Two Peer Responses (max 100 words each; no AI)",
+    "start_date": null,
+    "due_date": "2026-11-19",
+    "course_code": "NURS 180",
+    "points": 2,
+    "worth_pct": 2.4,
+    "worth_pct_estimated": true,
+    "grading_group": "WOOP discussion (6% total; 5 marks)"
+  },
+  {
+    "type": "assignment",
+    "name": "Week 11: Discussion Board - Vulnerability and Gratitude — Original Post (max 300 words; no AI)",
+    "start_date": null,
+    "due_date": "2026-11-24",
+    "course_code": "NURS 180",
+    "points": 3,
+    "worth_pct": 3.6,
+    "worth_pct_estimated": true,
+    "grading_group": "Vulnerability and Gratitude discussion (6% total; 5 marks)"
+  },
+  {
+    "type": "assignment",
+    "name": "Week 11: Discussion Board - Vulnerability and Gratitude — Two Peer Responses (max 100 words each; no AI)",
+    "start_date": null,
+    "due_date": "2026-11-26",
+    "course_code": "NURS 180",
+    "points": 2,
+    "worth_pct": 2.4,
+    "worth_pct_estimated": true,
+    "grading_group": "Vulnerability and Gratitude discussion (6% total; 5 marks)"
   },
   {
     "type": "assignment",
@@ -152,8 +187,7 @@
     "type": "assignment",
     "name": "Self-Care Creative Project",
     "start_date": null,
-    "due_date": null,
-    "sort_date": "2026-11-26",
+    "due_date": "2026-11-24",
     "course_code": "NURS 180",
     "worth_pct": 15
   }
