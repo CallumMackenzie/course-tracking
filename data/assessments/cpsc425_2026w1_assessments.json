@@ -60,7 +60,7 @@
     "name": "Quiz 1",
     "date": "2026-09-24",
     "course_code": "CPSC 425",
-    "worth_pct": 3.3333333333333335,
+    "worth_pct": 2.5,
     "worth_pct_estimated": true,
     "grading_group": "Quizzes",
     "grading_group_worth_pct": 10
@@ -70,7 +70,7 @@
     "name": "Quiz 2",
     "date": "2026-10-06",
     "course_code": "CPSC 425",
-    "worth_pct": 3.3333333333333335,
+    "worth_pct": 2.5,
     "worth_pct_estimated": true,
     "grading_group": "Quizzes",
     "grading_group_worth_pct": 10
@@ -80,7 +80,17 @@
     "name": "Quiz 3",
     "date": "2026-10-20",
     "course_code": "CPSC 425",
-    "worth_pct": 3.333333333333333,
+    "worth_pct": 2.5,
+    "worth_pct_estimated": true,
+    "grading_group": "Quizzes",
+    "grading_group_worth_pct": 10
+  },
+  {
+    "type": "quiz",
+    "name": "Quiz 4",
+    "date": "2026-11-03",
+    "course_code": "CPSC 425",
+    "worth_pct": 2.5,
     "worth_pct_estimated": true,
     "grading_group": "Quizzes",
     "grading_group_worth_pct": 10

@@ -27,18 +27,23 @@ test("CPSC 425 schedule includes the midterm, quizzes and published slides", () 
   for (const date of ["2026-09-24", "2026-10-06", "2026-10-20"]) {
     assert.match(content.find((item) => item.date === date)?.title ?? "", /Quiz [123]/);
   }
-  for (let lecture = 1; lecture <= 12; lecture++) {
+  assert.match(content.find((item) => item.date === "2026-11-03")?.title ?? "", /Quiz 4/);
+  for (let lecture = 1; lecture <= 17; lecture++) {
     assert.ok(content.some((item) => item.links.some((url) => url.endsWith(`/Lecture${lecture}.pdf`))));
   }
+  assert.ok(content.find((item) => item.date === "2026-10-27")?.links.some((url) => url.endsWith("/LectureNotes5.pdf")));
   const quizzes = data("cpsc425", "assessments").filter((item) => item.type === "quiz");
-  assert.deepEqual(quizzes.map((item) => item.date), ["2026-09-24", "2026-10-06", "2026-10-20"]);
-  assert.ok(quizzes.every((item) => item.worth_pct_estimated && item.grading_group_worth_pct === 10));
+  assert.deepEqual(quizzes.map((item) => item.date), ["2026-09-24", "2026-10-06", "2026-10-20", "2026-11-03"]);
+  assert.ok(quizzes.every((item) => item.worth_pct_estimated && item.grading_group_worth_pct === 10 && item.worth_pct === 2.5));
   assert.equal(quizzes.reduce((sum, item) => sum + item.worth_pct, 0), 10);
 });
 
-test("CPSC 340 Assignment 4 uses published availability and due dates", () => {
+test("CPSC 340 assignments 4 and 5 use published availability and due dates", () => {
   assert.equal(assessment("cpsc340", "Assignment 4").start_date, "2026-10-21");
   assert.equal(assessment("cpsc340", "Assignment 4").due_date, "2026-11-04");
+  assert.equal(assessment("cpsc340", "Assignment 5").start_date, "2026-11-06");
+  assert.equal(assessment("cpsc340", "Assignment 5").due_date, "2026-11-20");
+  assert.equal(assessment("cpsc340", "Assignment 5").sort_date, undefined);
 });
 
 test("STAT 305 revised schedule readings and final exam time are recorded", () => {

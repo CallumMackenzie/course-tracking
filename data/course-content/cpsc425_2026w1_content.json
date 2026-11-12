@@ -124,7 +124,7 @@
       "Szeliski 7",
       "Lecture Notes: SIFT"
     ],
-    "links": []
+    "links": ["https://www.cs.ubc.ca/~aerion1/425_2026W1/Lecture13.pdf", "https://www.cs.ubc.ca/~aerion1/425_2026W1/LectureNotes5.pdf"]
   },
   {
     "course_code": "CPSC 425",
@@ -133,25 +133,25 @@
     "readings": [
       "Szeliski 2.1, 8.1"
     ],
-    "links": []
+    "links": ["https://www.cs.ubc.ca/~aerion1/425_2026W1/Lecture14.pdf"]
   },
   {
     "course_code": "CPSC 425",
     "date": "2026-11-03",
-    "title": "Model Fitting 2: Hough Transform",
+    "title": "Model Fitting 2: Hough Transform; Quiz 4",
     "readings": [
       "Szeliski 7.4"
     ],
-    "links": []
+    "links": ["https://www.cs.ubc.ca/~aerion1/425_2026W1/Lecture15.pdf"]
   },
   {
     "course_code": "CPSC 425",
     "date": "2026-11-05",
     "title": "Stereo: Epipolar geometry, rectification, disparity, block matching",
     "readings": [
-      "Szeliski"
+      "Szeliski 12.1-12.4"
     ],
-    "links": []
+    "links": ["https://www.cs.ubc.ca/~aerion1/425_2026W1/Lecture16.pdf"]
   },
   {
     "course_code": "CPSC 425",
@@ -167,7 +167,7 @@
     "readings": [
       "Szeliski 9.3"
     ],
-    "links": []
+    "links": ["https://www.cs.ubc.ca/~aerion1/425_2026W1/Lecture17.pdf"]
   },
   {
     "course_code": "CPSC 425",
