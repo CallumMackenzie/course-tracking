@@ -37,6 +37,15 @@ test("NURS 180 discussion boards have separate original and response deadlines",
   assert.equal(assessments.find((item) => item.name === "Self-Care Creative Project")?.sort_date, undefined);
 });
 
+test("NURS 180 Final Course Reflection matches the Canvas deadline and points", () => {
+  const reflection = assessments.find((item) => item.name === "Final Course Reflection");
+  assert.ok(reflection);
+  assert.equal(reflection.due_date, "2026-12-08");
+  assert.equal(reflection.sort_date, undefined);
+  assert.equal(reflection.points, 5);
+  assert.equal(reflection.worth_pct, 5);
+});
+
 test("NURS 180 assessment weights total 100%", () => {
   assert.equal(assessments.reduce((total, item) => total + item.worth_pct, 0), 100);
 });
